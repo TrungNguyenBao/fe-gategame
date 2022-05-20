@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+@layer base {
+  @import './base';
+}
+
+@layer components {
+  @import './buttons';
+  @import './form';
+  @import './dialog';
+  .frosty {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    transition: all 200ms ease;
+
+  }
+  .frosty:hover {
+    transform: scale(1.05);
+  }
+  .cell {
+    transition: all 200ms ease;
+  }
+  .cell:hover {
+    transform: scale(1.02);
+  }
+  .primary-btn {
+    background-color: theme('colors.primaryBtn');
+  }
+  .secondary-btn {
+    background-color: theme('colors.secondaryBtn');
+  }
+  .paragraph-text-light {
+    color: theme('colors.paragraphText.light');
+  }
+  .paragraph-text-dark {
+    color: theme('colors.paragraphText.dark');
+  }
+}
+
+@layer utilities {
+  @import './utilities';
+}
+
+@import './custom';
+@import './content';
