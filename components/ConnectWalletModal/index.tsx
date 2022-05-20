@@ -24,7 +24,7 @@ const ConnectWalletModal: React.FC<ConnectWalletModalProps> = ({
       slideFromBottom="none"
       wrapperClass="fixed w-full h-screen top-0 left-0 z-100 flex flex-col items-center overflow-y-scroll py-20 no-scrollbar backdrop-blur"
     >
-      <Panel className="w-[90vw] sm:w-[400px]">
+      <Panel className="w-[355px] sm:w-[400px]">
         <div className="flex justify-between items-center pb-[12px] px-[6px]">
           <div className="font-bold text-[20px] leading-[1.1] dark:text-white">
             Connect Your Wallet

@@ -11,6 +11,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { setupNetwork } from '../../requests'
 import { CHAIN_ID_HEX } from '../../constants'
+import LoginModal from '../../components/Login'
 
 declare global {
   interface Window {
@@ -22,27 +23,8 @@ export function DefaultLayout({ ...props }) {
   const screen = useScreen('md')
   const { logout, user, chainId, isAuthenticated, enableWeb3 } = useMoralis()
   const [openMenu, setOpenMenu] = useState(false)
-  useEffect(() => {
-    if (chainId && chainId !== CHAIN_ID_HEX && user) {
-      // 0x61 testnet
-      toast.error('Please switch to Binance Smart Chain Wallet!')
-      if (user) logout()
+  const [openLogin, setOpenLogin] = useState(false)
 
-      const switchNetwork = async () => {
-        if (chainId) {
-          await setupNetwork(chainId)
-        }
-      }
-
-      switchNetwork()
-    }
-  }, [user, chainId])
-
-  useEffect(() => {
-    if (isAuthenticated && user) {
-      enableWeb3()
-    }
-  }, [isAuthenticated, user])
   return (
     <div className="w-full dark:bg-[#101111]">
       <DefaultHead />
@@ -60,6 +42,8 @@ export function DefaultLayout({ ...props }) {
               setOpenMenu(false)
             }}
             isOpenMenu={openMenu}
+            onCloseLogin={()=>setOpenLogin(true)}
+            onCloseMenu={()=>setOpenMenu(false)}
           />
         ) : (
           <Slideout
@@ -74,9 +58,12 @@ export function DefaultLayout({ ...props }) {
                 setOpenMenu(true)
               }}
               isOpenMenu={openMenu}
+              onCloseLogin={()=>setOpenLogin(true)}
+              onCloseMenu={()=>setOpenMenu(false)}
             />
           </Slideout>
         )}
+        <LoginModal isOpen={openLogin} logout={() => {}} onClose={() => setOpenLogin(false)} />
         <div
           className={`flex-1 flex flex-col transition-all duration-300 dark:bg-[#101111] dark:text-white ${
             !openMenu ? 'md:pl-48' : 'md:pl-14'

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { Children, Fragment, useEffect, useMemo, useState } from 'react'
+import { Children, Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import { RiSettings3Line, RiUser2Line } from 'react-icons/ri'
 import { BsLightningFill } from 'react-icons/bs'
 import { GiOrganigram } from 'react-icons/gi'
@@ -34,8 +34,9 @@ interface PropsType extends ReactProps {}
 export default function Sidebar({ ...props }) {
   const [theme, setTheme] = useState(null)
   const [currentIndexMenu, setCurrentIndexMenu] = useState(0)
+  
   const screen = useScreen('md')
-  const { isOpenMenu } = props
+  const { isOpenMenu, onCloseLogin, onCloseMenu } = props
   var mobile = false
   if (isOpenMenu) {
     if (!screen) {
@@ -74,7 +75,17 @@ export default function Sidebar({ ...props }) {
     } else {
       setCurrentIndexMenu(0)
     }
+    onCloseMenu()
   }
+
+  const handleClickMenuLogin = useCallback(
+    () => {
+      onCloseLogin()
+      onCloseMenu()
+    },
+    [],
+  );
+  
 
   useEffect(() => {
     menus?.forEach((menu) => {
@@ -160,26 +171,28 @@ export default function Sidebar({ ...props }) {
                           ></Button>
                         )
                       })}
-                      
                   </Fragment>
                 )
               })}
               <Button
-                      onClick={()=>{}}
-                      className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
-                      style={{ paddingLeft: !mobile ? '15px' : '' }}
-                      iconClassName={'text-[20px] mr-2'}
-                      text={'Login'}
-                    ></Button>
+                onClick={() => handleClickMenuLogin() }
+                className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
+                style={{ paddingLeft: !mobile ? '15px' : '' }}
+                iconClassName={'text-[20px] mr-2'}
+                text={'Login'}
+              ></Button>
             </div>
           ))}
+          <Button
+            onClick={() => {}}
+            className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
+            style={{ paddingLeft: !mobile ? '15px' : '' }}
+            iconClassName={'text-[20px] mr-2'}
+            text={'asss'}
+          ></Button>
         </div>
       </div>
-      <LoginModal
-      isOpen={true}
-      logout={()=>{}}
-      onClose={()=>{}}
-      />
+      
     </>
   )
 }
@@ -219,85 +232,10 @@ export const SIDEBAR_MENUS = [
         path: '/',
         icon: <FaHome />,
       },
-
       {
-        title: 'Trade',
-        icon: <FaRandom />,
-        children: [
-          {
-            title: 'Swap',
-            path: '/swap',
-          },
-          {
-            title: 'Liquidity',
-            path: '/liquidity',
-          },
-        ],
-      },
-      {
-        title: 'Profile',
-        path: 'https://caash.me/login',
-        icon: <FaUserAlt />,
-      },
-      {
-        title: 'Stake',
-        path: '/stake',
-        icon: <FaLock />,
-      },
-      {
-        title: 'Rewards',
-        path: '/rewards',
-        icon: (
-          <i className="text-2xl">
-            {' '}
-            <BsCurrencyBitcoin />
-          </i>
-        ),
-      },
-      {
-        title: 'Calculate',
-        path: '/calculate',
-        icon: <FaCalculator />,
-      },
-      // {
-      //   title: 'Sacrifice',
-      //   path: '/sacrifice',
-      //   icon: <BsLightningFill />,
-      // },
-      {
-        title: 'NFTs',
-        icon: <FaPhotoVideo />,
-        children: [
-          {
-            title: 'Collection',
-            path: '/collection',
-            icon: <FaPhotoVideo />,
-          },
-          {
-            title: 'Airdrops',
-            path: '/airdrops',
-            icon: <FaPhotoVideo />,
-          },
-        ],
-      },
-      {
-        title: 'Play',
-        icon: <FaRocket />,
-        children: [
-          {
-            title: 'Crash',
-            path: '/crash',
-          },
-          {
-            title: 'Lottery',
-            path: '/lottery',
-          },
-        ],
-      },
-      {
-        title: 'Docs',
-        path: 'https://docs.caash.io',
-        icon: <FaReadme />,
+        title: 'Games',
+        path: '/games',
+        icon: <FaHome />,
       },
     ],
   },
