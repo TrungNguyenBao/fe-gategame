@@ -7,5 +7,5 @@ export default function Page() {
 
 Page.Layout = DefaultLayout
 Page.LayoutProps = {
-    title: 'Caash',
+    title: 'Gate Game',
 }

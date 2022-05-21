@@ -6,7 +6,7 @@ import { DefaultHead } from '../default-head'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
 import Sidebar from './components/sidebar'
-import { useMoralis } from 'react-moralis'
+// import { useMoralis } from 'react-moralis'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { setupNetwork } from '../../requests'
@@ -21,7 +21,7 @@ declare global {
 
 export function DefaultLayout({ ...props }) {
   const screen = useScreen('md')
-  const { logout, user, chainId, isAuthenticated, enableWeb3 } = useMoralis()
+  // const { logout, user, chainId, isAuthenticated, enableWeb3 } = useMoralis()
   const [openMenu, setOpenMenu] = useState(false)
   const [openLogin, setOpenLogin] = useState(false)
 

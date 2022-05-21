@@ -2,7 +2,7 @@ import { Dialog } from '../shared/dialog/dialog'
 import Panel from '../shared/panel'
 import { connectors, CHAIN_ID } from '../../constants/index'
 import { AiOutlineClose } from 'react-icons/ai'
-import { useMoralis } from 'react-moralis'
+// import { useMoralis } from 'react-moralis'
 interface ConnectWalletModalProps extends ReactProps {
   isOpen: boolean
   onClose: () => any
@@ -11,11 +11,11 @@ const ConnectWalletModal: React.FC<ConnectWalletModalProps> = ({
   isOpen,
   onClose,
 }: ConnectWalletModalProps) => {
-  const { authenticate } = useMoralis()
-  const onConnectWallet = (provider: any) => {
-    if (provider === 'bsc') return
-    authenticate({ provider: provider, chainId: CHAIN_ID })
-  }
+  // const { authenticate } = useMoralis()
+  // const onConnectWallet = (provider: any) => {
+  //   if (provider === 'bsc') return
+  //   authenticate({ provider: provider, chainId: CHAIN_ID })
+  // }
 
   return (
     <Dialog
@@ -40,7 +40,7 @@ const ConnectWalletModal: React.FC<ConnectWalletModalProps> = ({
             <div
               key={connector.id}
               onClick={() => {
-                onConnectWallet(connector.id)
+                // onConnectWallet(connector.id)
                 onClose()
               }}
               className={`paragraph-text-light dark:paragraph-text-dark flex justify-between items-center text-[16px] w-full h-[48px] px-[24px] bg-[#f5f5f5] dark:bg-[#252525] mb-[8px] rounded-[12px] dark:bg-[#101111]  ${

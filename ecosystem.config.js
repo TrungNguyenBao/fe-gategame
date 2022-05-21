@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'Caash',
+      name: 'Gate game',
       script: '/usr/local/bin/yarn',
       args: 'start',
       instances: 1,

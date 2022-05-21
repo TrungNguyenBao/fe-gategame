@@ -7,6 +7,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useRef, useState } from 'react'
 import Toast from '../shared/toast'
 import { useForm } from 'react-hook-form'
+import useDevice from 'lib/hooks/useDevice'
 
 interface LoginModalProps extends ReactProps {
   isOpen: boolean
@@ -25,7 +26,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
     formState: { errors },
     reset,
   } = useForm()
-console.log(isOpen);
+  const { isMobile } = useDevice()
 
   const onSubmit = async (data) => {
     console.log(data)
@@ -49,35 +50,18 @@ console.log(isOpen);
       wrapperClass="fixed w-full h-screen top-0 left-0 z-100 flex flex-col items-center overflow-y-scroll py-20 no-scrollbar backdrop-blur"
       slideFromBottom="none"
     >
-      <Panel className="w-[400px] sm:w-[800px] h-[660px]">
-        <div className="flex justify-end items-center px-[6px]">
+      <Panel className="w-full sm:w-[800px] h-auto sm:h-[660px]">
+        <div className="flex justify-end px-[6px]">
           {/* <div className="font-bold text-[20px] leading-[1.1] dark:text-white">
             Your Wallet
           </div> */}
           <AiOutlineClose
-            className="text-white cursor-pointer"
+            className="text-white cursor-pointer mt-3"
             onClick={onClose}
           />
         </div>
-        <div className="mt-[10px] flex ">
-          <div className="w-1/2">
-            {tab === 1 ? (
-              <div className="break-words">
-                <img className="relative" src="/images/icon/bg_login.png" />
-                <p className="absolute text-center leading-10 bottom-[5rem] ml-[10px] break-words text-[32px] font-extrabold text-white">
-                  WELCOME TO <br /> GATEGAME
-                </p>
-              </div>
-            ) : (
-              <div className="break-words">
-                <img className="relative" src="/images/icon/bg_register.png" />
-                <p className="absolute text-center leading-10 bottom-[5rem] ml-[10px] break-words text-[32px] font-extrabold text-white">
-                  WELCOME TO <br /> GATEGAME
-                </p>
-              </div>
-            )}
-          </div>
-          <div className="w-1/2">
+        <div className="mt-[10px] sm:flex flex-wrap ">
+        {isMobile && <div className=" w-full">
             <ul className="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
               <li className="mr-2">
                 <a
@@ -107,6 +91,54 @@ console.log(isOpen);
                 </a>
               </li>
             </ul>
+          </div>}
+          <div className=" w-full sm:w-1/2">
+            {tab === 1 ? (
+              <div className="break-words">
+                <img className=" sm:relative" src="/images/icon/bg_login.png" />
+                <p className="absolute text-center leading-10 bottom-[25rem] sm:bottom-[5rem] ml-[10px] break-words text-[32px] font-extrabold text-white">
+                  WELCOME TO <br /> GATEGAME
+                </p>
+              </div>
+            ) : (
+              <div className="break-words">
+                <img className="relative" src="/images/icon/bg_register.png" />
+                <p className="absolute  text-center leading-10 bottom-[35rem] sm:bottom-[5rem] ml-[10px] break-words text-[32px] font-extrabold text-white">
+                  WELCOME TO <br /> GATEGAME
+                </p>
+              </div>
+            )}
+          </div>
+          <div className=" w-full sm:w-1/2">
+            {!isMobile && <ul className="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+              <li className="mr-2">
+                <a
+                  href="#"
+                  onClick={() => setTab(1)}
+                  className={`inline-flex p-4 group ${
+                    tab === 1
+                      ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
+                      : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
+                  }`}
+                >
+                  SIGN IN
+                </a>
+              </li>
+              <li className="mr-2">
+                <a
+                  href="#"
+                  onClick={() => setTab(2)}
+                  className={`inline-flex p-4 group ${
+                    tab === 2
+                      ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
+                      : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
+                  }`}
+                  aria-current="page"
+                >
+                  SIGN UP
+                </a>
+              </li>
+            </ul>}
             <div className="lg:ml-3">
               {tab === 1 ? <Login /> : <Register />}
             </div>

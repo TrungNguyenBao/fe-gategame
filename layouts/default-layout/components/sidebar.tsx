@@ -1,40 +1,36 @@
 import { useRouter } from 'next/router'
-import { Children, Fragment, useCallback, useEffect, useMemo, useState } from 'react'
-import { RiSettings3Line, RiUser2Line } from 'react-icons/ri'
+import {
+  Children,
+  Fragment,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
+import { RiLoginBoxLine, RiSettings3Line, RiUser2Line } from 'react-icons/ri'
 import { BsLightningFill } from 'react-icons/bs'
 import { GiOrganigram } from 'react-icons/gi'
 
 import { Footer } from './footer'
 import { Button } from '../../../components/shared/form/button'
-import { BsCurrencyBitcoin } from 'react-icons/bs'
+import { VscAccount } from "react-icons/vsc";
 import {
-  FaMoon,
-  FaSun,
-  FaBitcoin,
-  FaCalculator,
-  FaSlidersH,
   FaHome,
-  FaLock,
-  FaPhotoVideo,
-  FaRandom,
-  FaRocket,
-  FaTelegram,
-  FaUserAlt,
-  FaYoutube,
-  FaAngleUp,
   FaAngleDown,
   FaReadme,
+  FaGamepad,
 } from 'react-icons/fa'
 import { Switch } from '@headlessui/react'
 import useScreen from '../../../lib/hooks/useScreen'
 import Link from 'next/link'
 import LoginModal from '../../../components/Login'
+import { BiLogIn } from 'react-icons/bi'
 
 interface PropsType extends ReactProps {}
 export default function Sidebar({ ...props }) {
   const [theme, setTheme] = useState(null)
   const [currentIndexMenu, setCurrentIndexMenu] = useState(0)
-  
+
   const screen = useScreen('md')
   const { isOpenMenu, onCloseLogin, onCloseMenu } = props
   var mobile = false
@@ -78,14 +74,10 @@ export default function Sidebar({ ...props }) {
     onCloseMenu()
   }
 
-  const handleClickMenuLogin = useCallback(
-    () => {
-      onCloseLogin()
-      onCloseMenu()
-    },
-    [],
-  );
-  
+  const handleClickMenuLogin = useCallback(() => {
+    onCloseLogin()
+    onCloseMenu()
+  }, [])
 
   useEffect(() => {
     menus?.forEach((menu) => {
@@ -116,7 +108,7 @@ export default function Sidebar({ ...props }) {
                       className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black 
                     ${
                       router.pathname == submenu.path
-                        ? 'text-pink-400'
+                        ? 'text-[#0a94f2]'
                         : 'hover:bg-gray-100 text-gray-800 dark:text-white'
                     }`}
                       style={{ paddingLeft: !mobile ? '15px' : '' }}
@@ -175,24 +167,33 @@ export default function Sidebar({ ...props }) {
                 )
               })}
               <Button
-                onClick={() => handleClickMenuLogin() }
+                onClick={() => handleClickMenuLogin()}
                 className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
                 style={{ paddingLeft: !mobile ? '15px' : '' }}
+                icon={<RiLoginBoxLine />}
                 iconClassName={'text-[20px] mr-2'}
-                text={'Login'}
+                text={
+                  <div className="flex items-center font-semibold">
+                    <span>{'Sign In'}</span>
+                  </div>
+                }
+              ></Button>
+              <Button
+                onClick={() => handleClickMenuLogin()}
+                className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
+                style={{ paddingLeft: !mobile ? '15px' : '' }}
+                icon={<VscAccount />}
+                iconClassName={'text-[20px] mr-2'}
+                text={
+                  <div className="flex items-center font-semibold">
+                    <span>{'Register'}</span>
+                  </div>
+                }
               ></Button>
             </div>
           ))}
-          <Button
-            onClick={() => {}}
-            className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
-            style={{ paddingLeft: !mobile ? '15px' : '' }}
-            iconClassName={'text-[20px] mr-2'}
-            text={'asss'}
-          ></Button>
         </div>
       </div>
-      
     </>
   )
 }
@@ -235,7 +236,7 @@ export const SIDEBAR_MENUS = [
       {
         title: 'Games',
         path: '/games',
-        icon: <FaHome />,
+        icon: <FaGamepad />,
       },
     ],
   },
