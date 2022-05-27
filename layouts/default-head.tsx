@@ -11,7 +11,7 @@ export function DefaultHead() {
           content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=0"
         />
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="default-src *;
                         img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
                         style-src  'self' 'unsafe-inline' *"
