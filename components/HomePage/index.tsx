@@ -19,7 +19,7 @@ import BrowseGameGate from './BrowseGameGateSection';
 export default function HomePage() {
 
   return (
-    <div className="md:px-8 pt-4">
+    <div className="container mx-auto">
       <Header />
       <HotItems />
       <BestSeller />
