@@ -1,3 +1,4 @@
+import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
 
@@ -34,9 +35,7 @@ const GameItemHorizontal: React.FC = () => {
                         </div>
                     </div>
                     <div className="">
-                        <div className="inline-block bg-green-500 p-3 py-1 rounded-lg">
-                            <span>--</span>
-                        </div>
+                        <ItemRating />
                     </div>
                 </div>
             </div>

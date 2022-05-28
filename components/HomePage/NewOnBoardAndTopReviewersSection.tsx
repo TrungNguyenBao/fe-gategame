@@ -1,5 +1,5 @@
 import { Title2 } from "../../components/Common/Title2"
-import GameItemHorizontal from "../../components/Items/GameItemHorizontal"
+import GameItemHorizontal from "../Items/GameHorizontalItem"
 
 export const NewOnBoard: React.FC = () => {
     return (

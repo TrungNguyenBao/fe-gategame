@@ -66,6 +66,9 @@ module.exports = {
         // body: ['Open Sans', 'sans-serif'],
         body: ['hk_grotesk', 'sans-serif'],
       },
+      backgroundImage: {
+        customGradientBlackXs: 'linear-gradient(90deg,rgba(3,3,3,.5),rgba(0,0,0,0))'
+      },
       // boxShadow: (theme) => {
       //   const colors = {
       //     primary, accent, bluegray
