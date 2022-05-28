@@ -587,4 +587,5 @@ Liquidity.LayoutProps = {
   title: 'Liquidity',
 }
 
-export default Liquidity
+// export default Liquidity
+export default () => <></>
