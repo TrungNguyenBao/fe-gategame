@@ -1,7 +1,7 @@
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Title2 } from "../Common/Title";
-import GameItemFeatured from "../../components/Items/GameItemFeatured";
+import GameItemFeatured from "../Items/GameFeaturedItem";
 
 const Featured: React.FC = () => {
     return <section className="mb-16">

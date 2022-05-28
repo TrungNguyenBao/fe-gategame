@@ -1,4 +1,4 @@
-import { Title6 } from "../../components/Common/Title";
+import { Title6 } from "../Common/Title";
 import ItemOverlayCover from "./ItemOverlayCover";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
