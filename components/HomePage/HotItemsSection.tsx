@@ -2,18 +2,17 @@ import ProductItem from "../../components/Items/ProductItem";
 import React from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Title2 } from "../../components/Common/Title2";
 
 const HotItems: React.FC = () => {
   return (
-    <section>
-      <h2>Hot Items</h2>
-      <div className='container'>
+    <section className='container'>
+      <Title2 className="mb-8">Hot Items</Title2>
+      <div className="mb-16">
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
+          pagination={false}
           modules={[Pagination]}
           className="mySwiper"
         >
