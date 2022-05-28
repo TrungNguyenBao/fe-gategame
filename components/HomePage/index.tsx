@@ -1,11 +1,39 @@
-import FeatureSection from './FeatureSection'
-import Header from './Header'
+import React from "react";
+import BestSeller from './BestSellerSection';
+import BrowseGameGate from './BrowseGameGateSection';
+import Featured from './FeaturedSection';
+import Giftcode from './GiftcodeSection';
+import Header from './Header';
+import HighlyRecommended from './HighlyRecommendedSection';
+import HotItems from './HotItemsSection';
+import HowTo from './HowToSection';
+import Incoming from './IncomingSection';
+import NewOnBoardAndTopReviewers from './NewOnBoardAndTopReviewersSection';
+import RecentUpdate from './RecentUpdateSection';
+import TheCommunityRecommend from './TheCommunityRecommendSection';
+import Update from './UpdateSection';
+
 
 export default function HomePage() {
+
   return (
-    <div className="md:px-8 pt-4">
+    <div className="container mx-auto">
       <Header />
-      <FeatureSection />
+      <HotItems />
+      <BestSeller />
+      <NewOnBoardAndTopReviewers />
+      <TheCommunityRecommend />
+      <Featured />
+      <HighlyRecommended />
+      <Update />
+      <Incoming />
+      <RecentUpdate />
+      <Giftcode />
+      <HowTo />
+      <BrowseGameGate />
+
+
+      {/* <FeatureSection />
       <div className="grid sm:grid-cols-3 gap-4 py-[40px] md:px-[80px] sm:px-[20px]">
         <div className="col-span-3 sm:col-span-1 cell">
           <img
@@ -34,7 +62,7 @@ export default function HomePage() {
             className="w-full md:h-[330px] h-[270px] min-h-auto rounded-[20px] object-cover object-top"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

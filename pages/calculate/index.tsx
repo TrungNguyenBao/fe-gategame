@@ -404,4 +404,5 @@ Calculate.LayoutProps = {
   title: 'Rewards',
 }
 
-export default Calculate
+// export default Calculate
+export default () => <></>

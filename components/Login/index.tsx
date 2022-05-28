@@ -7,7 +7,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useRef, useState } from 'react'
 import Toast from '../shared/toast'
 import { useForm } from 'react-hook-form'
-import useDevice from 'lib/hooks/useDevice'
+import useDevice from '../../lib/hooks/useDevice'
 
 interface LoginModalProps extends ReactProps {
   isOpen: boolean
@@ -28,7 +28,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   } = useForm()
   const { isMobile } = useDevice()
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     console.log(data)
 
     // await login(data.email, data.password);
@@ -160,7 +160,7 @@ const Register = () => {
   } = useForm()
   const password = useRef({})
   password.current = watch('password', '')
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     console.log(data)
 
     // await login(data.email, data.password);
@@ -342,7 +342,7 @@ const Login = () => {
     reset,
   } = useForm()
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     console.log(data)
 
     // await login(data.email, data.password);

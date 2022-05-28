@@ -61,10 +61,15 @@ module.exports = {
           DEFAULT: '#575757',
           dark: '#8a8f98',
         },
+        grayBg: '#222',
+        grayLine: '#343a40',
       },
       fontFamily: {
         // body: ['Open Sans', 'sans-serif'],
         body: ['hk_grotesk', 'sans-serif'],
+      },
+      backgroundImage: {
+        customGradientBlackXs: 'linear-gradient(90deg,rgba(3,3,3,.5),rgba(0,0,0,0))'
       },
       // boxShadow: (theme) => {
       //   const colors = {

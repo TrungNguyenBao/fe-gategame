@@ -7,6 +7,8 @@ import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 import { AlertProvider } from '../lib/providers/alert-dialog'
 import { ToastProvider } from '../lib/providers/toast-provider'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
