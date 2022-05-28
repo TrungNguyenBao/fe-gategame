@@ -5,7 +5,7 @@ const ProductItem: React.FC = () => {
         <div className="flex flex-col">
             <div className="relative rounded-t-lg overflow-hidden">
                 <a href="#">
-                    <img src="https://cdn.gategame.io/storage/upload/product/PsU3gIM937O5vZJMCk5q4qFfEy2HITMv7bxHjHVw.gif?w=424&amp;auto=compress,format" />
+                    <img className="aspect-square" src="/images/icon/product.png" />
                     <ProductItemType type={"rare"} />
                 </a>
             </div>
@@ -14,7 +14,7 @@ const ProductItem: React.FC = () => {
                     Stellaverse
                 </span>
                 <h3>
-                    <a className="font-bold" href="https://gategame.io/lightning-pylon-p11355.html">
+                    <a className="font-bold" href="#">
                         LIGHTNING PYLON
                     </a>
                 </h3>
