@@ -61,6 +61,8 @@ module.exports = {
           DEFAULT: '#575757',
           dark: '#8a8f98',
         },
+        grayBg: '#121212',
+        grayLine: '#343a40',
       },
       fontFamily: {
         // body: ['Open Sans', 'sans-serif'],
