@@ -1,20 +1,18 @@
-import FeatureSection from './FeatureSection'
-import Header from './Header'
-
-import Slider from "react-slick";
-import React, { Component } from "react";
-import HotItems from './HotItemsSection';
+import React from "react";
 import BestSeller from './BestSellerSection';
-import NewOnBoardAndTopReviewers from './NewOnBoardAndTopReviewersSection';
-import TheCommunityRecommend from './TheCommunityRecommendSection';
-import Featured from './FeaturedSection';
-import HighlyRecommended from './HighlyRecommendedSection';
-import Update from './UpdateSection';
-import Incoming from './IncomingSection';
-import RecentUpdate from './RecentUpdateSection';
-import Giftcode from './GiftcodeSection';
-import HowTo from './HowToSection';
 import BrowseGameGate from './BrowseGameGateSection';
+import Featured from './FeaturedSection';
+import Giftcode from './GiftcodeSection';
+import Header from './Header';
+import HighlyRecommended from './HighlyRecommendedSection';
+import HotItems from './HotItemsSection';
+import HowTo from './HowToSection';
+import Incoming from './IncomingSection';
+import NewOnBoardAndTopReviewers from './NewOnBoardAndTopReviewersSection';
+import RecentUpdate from './RecentUpdateSection';
+import TheCommunityRecommend from './TheCommunityRecommendSection';
+import Update from './UpdateSection';
+
 
 export default function HomePage() {
 
