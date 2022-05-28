@@ -1,20 +1,22 @@
+import { Title6 } from "../../components/Common/Title";
+import ItemOverlayCover from "./ItemOverlayCover";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
 
-const GameItemRecomendation: React.FC = () => {
+const GameRecomendationItem: React.FC = () => {
     return (
         <div className="flex rounded-xl overflow-hidden">
             <div className="relative w-2/3">
                 <a href="">
                     <img className="w-full" src="https://cdn.gategame.io/storage/upload/product/80r9evZwYYsf2kYc6vVcdZvcHrrzBUbFDpXlDkEd.png?w=877&amp;auto=compress,format" />
-                    <div className="absolute h-full w-full left-0 top-0 bg-customGradientBlackXs"></div>
+                    <ItemOverlayCover />
                 </a>
                 <div className="absolute bottom-8 left-8">
-                    <h6 className="flex items-center gap-2 text-xs text-gray-200 font-semibold">
+                    <Title6 className="text-gray-200">
                         <img src="https://cdn.gategame.io/storage/upload/product/rH0pHyWInbfN0sMEowxrcWt2enAZQ5pFM95tQle8.png?w=16&amp;auto=compress,format" />
                         GGWP
-                    </h6>
+                    </Title6>
                     <h3 className="text-28 leading-normal font-semibold my-1">
                         <a className="" href="https://gategame.io/heroes-origin-p11293.html" >
                             Heroes Origin
@@ -64,4 +66,4 @@ const GameItemRecomendation: React.FC = () => {
     )
 }
 
-export default GameItemRecomendation;
+export default GameRecomendationItem;

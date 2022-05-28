@@ -1,3 +1,4 @@
+import { Title6 } from "../../components/Common/Title";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
@@ -16,10 +17,10 @@ const GameItemHorizontal: React.FC = () => {
                     </div>
                     <div className="flex-1">
                         <div className="">
-                            <h6 className="flex items-center gap-2 text-xs text-gray-500 font-semibold">
+                            <Title6 className="text-gray-500">
                                 <img src="/images/icon/hero-ic1.png" />
                                 GGWP
-                            </h6>
+                            </Title6>
                             <h3 className="text-16 leading-7 font-semibold my-1">
                                 <a className="" href="https://gategame.io/stellaverse-frontier-p11163.html">
                                     Stellaverse: FRONTIER

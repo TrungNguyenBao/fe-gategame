@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Title2 } from "../../components/Common/Title2";
+import { Title2 } from "../Common/Title";
 import ProductItem from "../../components/Items/ProductItem";
 
 const BestSeller: React.FC = () => {

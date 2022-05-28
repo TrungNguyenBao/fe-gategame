@@ -2,7 +2,7 @@ import ProductItem from "../../components/Items/ProductItem";
 import React from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Title2 } from "../../components/Common/Title2";
+import { Title2 } from "../Common/Title";
 
 const HotItems: React.FC = () => {
   return (

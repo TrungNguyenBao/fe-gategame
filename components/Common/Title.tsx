@@ -10,3 +10,11 @@ export const Title2: React.FC<TitleProps> = ({ className, children }) => {
         </h2>
     )
 }
+
+export const Title6: React.FC<TitleProps> = ({ className, children }) => {
+    return (
+        <h6 className={`flex items-center gap-2 text-xs font-semibold ${className}`}>
+            {children}
+        </h6>
+    )
+}

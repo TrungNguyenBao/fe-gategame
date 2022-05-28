@@ -1,6 +1,6 @@
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Title2 } from "../../components/Common/Title2";
+import { Title2 } from "../Common/Title";
 import GameItemRecomendation from "../Items/GameRecomendationItem";
 
 const TheCommunityRecommend: React.FC = () => {
