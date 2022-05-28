@@ -9,7 +9,7 @@ const ProductItem: React.FC = () => {
                     <ProductItemType type={"rare"} />
                 </a>
             </div>
-            <div className="bg-[#222] p-5 rounded-b-lg">
+            <div className="bg-grayBg p-5 rounded-b-lg">
                 <span className="text-xs font-semibold text-gray-400">
                     Stellaverse
                 </span>

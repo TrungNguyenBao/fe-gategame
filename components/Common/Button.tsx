@@ -1,12 +1,15 @@
+import { MouseEventHandler } from "react"
+
 interface ButtonProps {
     className?: string,
     children: any,
     href?: string,
+    onClick?: MouseEventHandler<HTMLButtonElement>,
 }
 
-export const ButtonPrimary: React.FC<ButtonProps> = ({ className, children }) => {
+export const ButtonPrimary: React.FC<ButtonProps> = ({ className, children, onClick }) => {
     return (
-        <button className={`inaline-block w-auto bg-[#0a85ed] hover:bg-black transition-all py-3 px-10 rounded-md font-semibold ${className}`}>
+        <button onClick={onClick} className={`inaline-block w-auto bg-[#0a85ed] hover:bg-black transition-all py-3 px-10 rounded-md font-semibold ${className}`}>
             {children}
         </button>
     )

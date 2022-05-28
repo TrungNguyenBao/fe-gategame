@@ -5,7 +5,7 @@ import ItemTags from "./ItemTags";
 
 const GameItemHorizontal: React.FC = () => {
     return (
-        <div className="border-b-0.5 border-[#333] bg-[#222] first:rounded-t-xl last:rounded-b-xl last:border-b-0">
+        <div className="border-b-0.5 border-[#333] bg-grayBg first:rounded-t-xl last:rounded-b-xl last:border-b-0">
             <div className="p-4">
                 <div className="flex gap-8 w-full">
                     <div className="">

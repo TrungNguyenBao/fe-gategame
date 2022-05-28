@@ -33,7 +33,7 @@ const GameRecomendationItem: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative w-1/3 bg-[#222]">
+            <div className="relative w-1/3 bg-grayBg">
                 <div className=" p-8">
                     <div className="pb-6">
                         <div className="flex justify-between">

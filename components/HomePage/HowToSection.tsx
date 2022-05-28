@@ -5,9 +5,9 @@ const HowTo: React.FC = () => {
   const [openTab, setOpenTab] = React.useState(1)
 
   return (
-    <>
-      <Title2 className="mb-4">How to...?</Title2>
-      <div className="bg-grayBg">
+    <section className='mb-16'>
+      <Title2 className="mb-6">How to...?</Title2>
+      <div className="bg-grayBg rounded-lg overflow-hidden">
         <div className="mb-5 border-b border-gray-200 dark:border-gray-700">
           <ul
             className="flex flex-wrap"
@@ -216,7 +216,7 @@ const HowTo: React.FC = () => {
           )}
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

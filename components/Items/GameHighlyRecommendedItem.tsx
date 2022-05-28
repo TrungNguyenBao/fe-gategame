@@ -15,7 +15,7 @@ const GameHighlyRecommendedItem: React.FC = () => {
                         <ItemRating className="absolute bottom-4 left-4" />
                     </a>
                 </div>
-                <div className="bg-[#222]">
+                <div className="bg-grayBg">
                     <div className="flex justify-between p-4">
                         <div className="">
                             <Title6>
