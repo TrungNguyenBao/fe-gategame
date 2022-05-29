@@ -11,6 +11,7 @@ import Incoming from './IncomingSection';
 import NewOnBoardAndTopReviewers from './NewOnBoardAndTopReviewersSection';
 import RecentUpdate from './RecentUpdateSection';
 import TheCommunityRecommend from './TheCommunityRecommendSection';
+import TopBlockchainGamesSection from "./TopBlockchainGamesSection";
 import Update from './UpdateSection';
 
 
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <div className="container mx-auto">
       <Header />
+      <TopBlockchainGamesSection />
       <HotItems />
       <BestSeller />
       <NewOnBoardAndTopReviewers />

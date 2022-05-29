@@ -2,30 +2,6 @@ import { Title2 } from "../../components/Common/Title";
 import { ButtonPrimary } from "../../components/Common/Button";
 
 const Giftcode: React.FC = () => {
-  const x = <section className="mb-16">
-    <div className="bg-grayBg rounded-xl">
-      <div className="px-10 py-12">
-        <Title2 className="flex items-center gap-4 mb-4">
-        </Title2>
-        <p>Feel the thrill of the chase and the rush of escape behind the wheels of the world’s hottest high-performance cars
-
-        </p>
-        <div id="mc_embed_signup">
-          <form className="validate" method="post">
-            <div>
-              <div className="">
-                <input type="email" value="" name="EMAIL" className="form-control required email" id="mce-EMAIL" placeholder="Enter your email to be the first to know" aria-required="true" />
-              </div>
-              <ButtonPrimary>
-                Submit
-              </ButtonPrimary>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
   return <section className="mb-16">
     <div className="rounded-xl overflow-hidden shadow-2xl">
       <div className="relative">
@@ -43,7 +19,7 @@ const Giftcode: React.FC = () => {
             <form  method="post">
               <div className="flex gap-2 items-center">
                 <div className="flex-1">
-                  <input type="email" value="" name="EMAIL" className="form-control required email" id="mce-EMAIL" placeholder="Enter your email to be the first to know" aria-required="true" />
+                  <input type="email" name="EMAIL" className="form-control required email" id="mce-EMAIL" placeholder="Enter your email to be the first to know" />
                 </div>
                 <ButtonPrimary>
                   Submit

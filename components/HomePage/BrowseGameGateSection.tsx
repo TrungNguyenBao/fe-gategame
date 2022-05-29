@@ -2,7 +2,7 @@ import { Title2 } from '../Common/Title'
 
 const BrowseGameGate: React.FC = () => {
   return (
-    <section>
+    <section className='mb-16'>
       <Title2 className="mb-4">Browse GameGate</Title2>
 
       <div className="flex flex-row gap-8">

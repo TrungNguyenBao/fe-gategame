@@ -20,12 +20,12 @@ const Header: React.FC = () => {
             className="mySwiper"
           >
             {[1, 2, 3].map(() => (
-              <SwiperSlide style={{ height: '500px' }}>
-                <img className='relative w-full' src='https://cdn.gategame.io/storage/upload/product/HoDHUHGezKDh0lWdzPnVa77O1sXCM8Khtx6GFmRN.jpg?w=877&auto=compress,format' />
-                <div className='absolute bottom-4 left-4' >
+              <SwiperSlide>
+                <img className='relative w-full h-[564px] object-cover rounded-xl' src='https://cdn.gategame.io/storage/upload/product/HoDHUHGezKDh0lWdzPnVa77O1sXCM8Khtx6GFmRN.jpg?w=877&apm;auto=compress,format' />
+                <div className='absolute bottom-8 left-8' >
                   <ItemRating className='mb-4' />
                   <Title6 className='mb-4'>
-                    <img className='h-[15px] w-[15px]' src='https://gategame.io/storage/upload/product/BxRFQbOPIys9t4MccRxWHgM9O5eBzXqJylao6zyy.png?w=16&auto=compress,format' />
+                    <img className='h-[15px] w-[15px]' src='https://gategame.io/storage/upload/product/BxRFQbOPIys9t4MccRxWHgM9O5eBzXqJylao6zyy.png?w=16&apm;auto=compress,format' />
                     <span>GGWP</span>
                   </Title6>
                   <div className='text-28 font-bold mb-4'><a href='https://gategame.io/en/stellaverse-dynasty-p11215.html'>Stellaverse: DYNASTY</a></div>
