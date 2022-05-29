@@ -14,8 +14,8 @@ const Incoming: React.FC = () => {
             modules={[Pagination]}
             className="mySwiper"
         >
-            {[1, 2, 3, 4, 6, 7, 8, 9, 10].map(() => (
-                <SwiperSlide >
+            {[1, 2, 3, 4, 6, 7, 8, 9, 10].map((key) => (
+                <SwiperSlide key={key}>
                     <GameMdItem />
                 </SwiperSlide>
             ))}

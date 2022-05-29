@@ -15,8 +15,8 @@ const Featured: React.FC = () => {
             modules={[Pagination]}
             className="mySwiper"
         >
-            {[1, 2].map(() => (
-                <SwiperSlide >
+            {[1, 2].map((key) => (
+                <SwiperSlide key={key}>
                     <GameItemFeatured />
                 </SwiperSlide>
             ))}

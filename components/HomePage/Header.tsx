@@ -19,8 +19,8 @@ const Header: React.FC = () => {
             modules={[Pagination, Autoplay]}
             className="mySwiper"
           >
-            {[1, 2, 3].map(() => (
-              <SwiperSlide>
+            {[1, 2, 3].map((key) => (
+              <SwiperSlide key={key}>
                 <img className='relative w-full h-[564px] object-cover rounded-xl' src='https://cdn.gategame.io/storage/upload/product/HoDHUHGezKDh0lWdzPnVa77O1sXCM8Khtx6GFmRN.jpg?w=877&apm;auto=compress,format' />
                 <div className='absolute bottom-8 left-8' >
                   <ItemRating className='mb-4' />
@@ -80,8 +80,8 @@ const ItemGame = () => {
           <MdOutlineKeyboardArrowRight size={20} color={"#0a85ed"} />
         </p>
         <ul className="flex flex-wrap gap-4 mb-2">
-          {[1, 2, 3, 4, 5, 8].map(() => (
-            <li>
+          {[1, 2, 3, 4, 5, 8].map((key) => (
+            <li key={key}>
               <a
                 className="text-black"
                 href="#"

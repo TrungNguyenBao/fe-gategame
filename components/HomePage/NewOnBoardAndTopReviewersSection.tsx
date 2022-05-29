@@ -6,8 +6,8 @@ export const NewOnBoard: React.FC = () => {
         <div>
             <Title2 className="mb-4">New on Board</Title2>
             <div>
-                {[1, 2, 3, 4, 5, 6].map(() => (
-                    <GameItemHorizontal />
+                {[1, 2, 3, 4, 5, 6].map((key) => (
+                    <GameItemHorizontal key={key}/>
                 ))}
             </div>
         </div>
