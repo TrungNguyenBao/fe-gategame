@@ -1,13 +1,10 @@
+import { useRef, useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { AiOutlineClose } from 'react-icons/ai'
+import useDevice from '../../lib/hooks/useDevice'
+import { login, signup } from '../../lib/services/auth'
 import { Dialog } from '../shared/dialog/dialog'
 import Panel from '../shared/panel'
-import { AiOutlineClose } from 'react-icons/ai'
-import { Button } from '../shared/form/button'
-import { BiLinkExternal, BiCopy } from 'react-icons/bi'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-import { useRef, useState } from 'react'
-import Toast from '../shared/toast'
-import { useForm } from 'react-hook-form'
-import useDevice from '../../lib/hooks/useDevice'
 
 interface LoginModalProps extends ReactProps {
   isOpen: boolean
@@ -50,8 +47,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
       wrapperClass="fixed w-full h-screen top-0 left-0 z-100 flex flex-col items-center overflow-y-scroll py-20 no-scrollbar backdrop-blur"
       slideFromBottom="none"
     >
-      <Panel className="w-full sm:w-[800px] h-auto sm:h-[660px]">
-        <div className="flex justify-end px-[6px]">
+      <Panel className="relative w-full sm:w-[800px] h-auto ">
+        <div className="absolute top-2 right-4 flex justify-end px-[6px]">
           {/* <div className="font-bold text-[20px] leading-[1.1] dark:text-white">
             Your Wallet
           </div> */}
@@ -60,18 +57,17 @@ const LoginModal: React.FC<LoginModalProps> = ({
             onClick={onClose}
           />
         </div>
-        <div className="mt-[10px] sm:flex flex-wrap ">
-        {isMobile && <div className=" w-full">
+        <div className="sm:flex gap-4 p-2">
+          {isMobile && <div className=" w-full">
             <ul className="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
               <li className="mr-2">
                 <a
                   href="#"
                   onClick={() => setTab(1)}
-                  className={`inline-flex p-4 group ${
-                    tab === 1
-                      ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
-                      : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
-                  }`}
+                  className={`inline-flex p-4 group ${tab === 1
+                    ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
+                    : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
+                    }`}
                 >
                   SIGN IN
                 </a>
@@ -80,11 +76,10 @@ const LoginModal: React.FC<LoginModalProps> = ({
                 <a
                   href="#"
                   onClick={() => setTab(2)}
-                  className={`inline-flex p-4 group ${
-                    tab === 2
-                      ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
-                      : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
-                  }`}
+                  className={`inline-flex p-4 group ${tab === 2
+                    ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
+                    : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
+                    }`}
                   aria-current="page"
                 >
                   SIGN UP
@@ -92,34 +87,37 @@ const LoginModal: React.FC<LoginModalProps> = ({
               </li>
             </ul>
           </div>}
-          <div className=" w-full sm:w-1/2">
+
+          {/* cover image */}
+          <div className="h-full w-full sm:w-1/2">
             {tab === 1 ? (
-              <div className="break-words">
-                <img className=" sm:relative" src="/images/icon/bg_login.png" />
+              <div className="relative">
+                <img className="w-full h-full sm:relative object-cover rounded" src="/images/icon/bg_login.png" />
                 <p className="absolute text-center leading-10 bottom-[25rem] sm:bottom-[5rem] ml-[10px] break-words text-[32px] font-extrabold text-white">
                   WELCOME TO <br /> GATEGAME
                 </p>
               </div>
             ) : (
-              <div className="break-words">
-                <img className="relative" src="/images/icon/bg_register.png" />
+              <div className="relative">
+                <img className="w-full h-full sm:relative object-cover rounded" src="/images/icon/bg_register.png" />
                 <p className="absolute  text-center leading-10 bottom-[35rem] sm:bottom-[5rem] ml-[10px] break-words text-[32px] font-extrabold text-white">
                   WELCOME TO <br /> GATEGAME
                 </p>
               </div>
             )}
           </div>
-          <div className=" w-full sm:w-1/2">
+
+          {/* tab pc */}
+          <div className="flex flex-col h-full w-full sm:w-1/2">
             {!isMobile && <ul className="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
               <li className="mr-2">
                 <a
                   href="#"
                   onClick={() => setTab(1)}
-                  className={`inline-flex p-4 group ${
-                    tab === 1
-                      ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
-                      : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
-                  }`}
+                  className={`inline-flex p-2 group font-semibold ${tab === 1
+                    ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
+                    : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
+                    }`}
                 >
                   SIGN IN
                 </a>
@@ -128,18 +126,17 @@ const LoginModal: React.FC<LoginModalProps> = ({
                 <a
                   href="#"
                   onClick={() => setTab(2)}
-                  className={`inline-flex p-4 group ${
-                    tab === 2
-                      ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
-                      : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
-                  }`}
+                  className={`inline-flex p-2 group font-semibold ${tab === 2
+                    ? 'text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500'
+                    : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
+                    }`}
                   aria-current="page"
                 >
                   SIGN UP
                 </a>
               </li>
             </ul>}
-            <div className="lg:ml-3">
+            <div className=" overflow-auto">
               {tab === 1 ? <Login /> : <Register />}
             </div>
           </div>
@@ -157,11 +154,22 @@ const Register = () => {
     formState: { errors },
     reset,
     watch,
+    setError,
   } = useForm()
+
+  const [loading, setLoading] = useState(false);
   const password = useRef({})
   password.current = watch('password', '')
   const onSubmit = async (data: any) => {
     console.log(data)
+
+    const { data: { Error } } = await signup(data);
+    if (Error) {
+      setError('registerError', { type: 'custom', message: Error });
+      setLoading(false)
+      return;
+    }
+    reset();
 
     // await login(data.email, data.password);
     // reset()
@@ -249,7 +257,7 @@ const Register = () => {
       </div>
       <div className="mb-6">
         <label
-          htmlFor="password_repeat"
+          htmlFor="password_confirmation"
           className="block text-[#f3efefad] text-sm mb-2"
         >
           Retype password
@@ -258,9 +266,9 @@ const Register = () => {
           type="password"
           className="form-control block w-full px-4 py-2 text-16 font-normal text-[#f3efefad] bg-black bg-clip-padding border border-solid border-black rounded transition ease-in-out m-0 focus:text-[#f3efefad] focus:bg-black focus:border-black focus:outline-none"
           placeholder="Retype your password"
-          id="password_repeat"
-          aria-invalid={errors.password_repeat ? 'true' : 'false'}
-          {...register('password_repeat', {
+          id="password_confirmation"
+          aria-invalid={errors.password_confirmation ? 'true' : 'false'}
+          {...register('password_confirmation', {
             required: 'Please enter your password',
             minLength: {
               value: 6,
@@ -274,9 +282,9 @@ const Register = () => {
               value === password.current || 'The passwords do not match',
           })}
         />
-        {errors.password_repeat && (
+        {errors.password_confirmation && (
           <span className="text-red-400" role="alert">
-            {errors.password_repeat.message}
+            {errors.password_confirmation.message}
           </span>
         )}
       </div>
@@ -292,10 +300,10 @@ const Register = () => {
           className="form-control block w-full px-4 py-2 text-16 font-normal text-[#f3efefad] bg-black bg-clip-padding border border-solid border-black rounded transition ease-in-out m-0 focus:text-[#f3efefad] focus:bg-black focus:border-black focus:outline-none"
           placeholder="Enter referer code"
           id="referer_code"
-          // aria-invalid={errors.email ? 'true' : 'false'}
-          // {...register('referer_code', {
-          //   required: 'Please enter your username',
-          // })}
+        // aria-invalid={errors.email ? 'true' : 'false'}
+        // {...register('referer_code', {
+        //   required: 'Please enter your username',
+        // })}
         />
         {/* {errors.referer_code && (
           <span className="text-red-400" role="alert">
@@ -303,14 +311,19 @@ const Register = () => {
           </span>
         )} */}
       </div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-4">
         <div className="form-group form-check">
           <input
             type="checkbox"
             className="form-check-input h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-            id="exampleCheck3"
+            id="agreeRegister"
+            name="agree"
+            {...register('agree', {
+              validate: (value) =>
+                value === true || 'Please agree term of services.',
+            })}
           />
-          <label className="form-check-label inline-block text-[#f3efefad]">
+          <label htmlFor='agreeRegister' className="form-check-label inline-block text-[#f3efefad]">
             I agree to{' '}
             <a
               className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
@@ -319,8 +332,20 @@ const Register = () => {
               terms
             </a>
           </label>
+
+          {errors.agree && (
+            <span className="block text-red-400 p-2" role="alert">
+              {errors.agree.message}
+            </span>
+          )}
         </div>
       </div>
+
+      {errors.registerError && (
+        <span className="block text-red-400 px-2 pb-2" role="alert">
+          {errors.registerError.message}
+        </span>
+      )}
 
       <button
         type="submit"
@@ -340,17 +365,26 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    setError,
   } = useForm()
+
+  const [loading, setLoading] = useState<boolean>(false)
 
   const onSubmit = async (data: any) => {
     console.log(data)
 
-    // await login(data.email, data.password);
-    // reset()
+    setLoading(true)
+    const { data: { Error } } = await login(data);
+    if (Error) {
+      setError('loginError', { type: 'custom', message: Error });
+      setLoading(false)
+      return;
+    }
+    reset();
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className={loading ? 'opacity-60 pointer-events-none' : ''} onSubmit={handleSubmit(onSubmit)}>
       <p className="text-[#f3efefad] my-3">
         The platform based on blockchain technology, data will be guaranteed
         immutability and transparency.
@@ -416,9 +450,9 @@ const Login = () => {
           <input
             type="checkbox"
             className="form-check-input h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-            id="exampleCheck3"
+            id="loginRememberMe"
           />
-          <label className="form-check-label inline-block text-[#f3efefad]">
+          <label htmlFor='loginRememberMe' className="form-check-label inline-block text-[#f3efefad] cursor-pointer">
             Remember me
           </label>
         </div>
@@ -429,6 +463,10 @@ const Login = () => {
           Forgot password?
         </a>
       </div>
+
+      {errors.loginError && <span className="block text-red-400 mb-4" role="alert">
+        {errors.loginError.message}
+      </span>}
 
       <button
         type="submit"

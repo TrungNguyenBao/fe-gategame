@@ -3,9 +3,9 @@ const ItemTags: React.FC<{ tags: Array<string> }> = ({ tags }) => {
     return (
         <ul className="">
             {tags.map((tag) => (
-                <li className="inline-block px-2 py-1 font-semibold leading-none text-12 rounded border-[#6cb6f4] text-[#6cb6f4] border-0.5 mr-2 hover:bg-[#6cb6f4] hover:text-[#fff]">
+                <li key={tag} className="inline-block px-2 py-1 font-semibold leading-none text-12 rounded border-[#6cb6f4] text-[#6cb6f4] border-0.5 mr-2 hover:bg-[#6cb6f4] hover:text-[#fff]">
                     <a href="#">{tag}</a>
-                    </li>
+                </li>
             ))}
 
             {/* <li className="-more">

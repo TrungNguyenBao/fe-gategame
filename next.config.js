@@ -1,6 +1,16 @@
 const path = require('path')
 
+const rewrites = () => {
+  return [
+    {
+      source: "/api/:path*",
+      destination: 'http://52.77.251.127/api/:path*',
+    },
+  ];
+};
+
 module.exports = {
+  rewrites,
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

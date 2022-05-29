@@ -429,8 +429,8 @@ const TopBlockchainGamesSection: React.FC = () => {
                         <tbody>
                             {[1, 3, 4, 5, 10].map((key) => (
                                 <tr key={key} className="text-12 border-b-0.5 border-gray-700">
-                                    <td className="p-4 text-center text-14 ">{key}</td>
-                                    <td className="p-4">
+                                    <td className="p-2 text-center text-14 ">{key}</td>
+                                    <td className="p-3">
                                         <div className="flex items-start gap-2">
                                             <div className="image">
                                                 <a href="#">
