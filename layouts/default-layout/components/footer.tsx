@@ -21,15 +21,15 @@ export function Footer() {
                   <img
                     src={
                       theme == 'light'
-                        ? '/assets/logo-black.png'
-                        : '/assets/logo-white.png'
+                        ? '/images/icon/logo.svg'
+                        : '/images/icon/logo.svg'
                     }
                     alt="logo"
                     className="w-28"
                   />
                 </a>
                 <div className="dark:text-[#8a8f98] hover:opacity-70 mt-[20px] text-[14px] w-[100%] mb-4">
-                  Building a comprehensive DeFi platform.
+                  {/* Building a comprehensive DeFi platform. */}
                 </div>
               </div>
             </div>

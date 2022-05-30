@@ -77,11 +77,11 @@ export function Header({ ...props }) {
             </Button>
           ) : ( */}
           <div className=" xl:w-30">
-            <Select
+            {/* <Select
               className="my-react-select-container flex-1 bg-transparent"
               classNamePrefix="my-react-select"
               defaultValue={{ value: 0, label: "English" }}
-              options={[{ value: 0, label: "English" }, { value: 1, label: "Vietnamese" }]} />
+              options={[{ value: 0, label: "English" }, { value: 1, label: "Vietnamese" }]} /> */}
             {/* <select
               className="form-select appearance-none
                 block

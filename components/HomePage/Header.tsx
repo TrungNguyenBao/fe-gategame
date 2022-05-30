@@ -46,24 +46,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="justify-center flex w-full sm:w-[800px] pt-8 mx-auto flex-wrap sm:flex-nowrap">
-        <div className="frosty bg-white mx-2 w-full sm:w-[25%] mb-8 dark:bg-[#252525]">
-          <div className="text-[2rem] leading-[44px] font-bold">Soon</div>
-          <div className="text-[1rem]">CASH Holders</div>
-        </div>
-        <div className="frosty bg-white mx-2 w-full sm:w-[25%] mb-8 dark:bg-[#252525]">
-          <div className="text-[2rem] leading-[44px] font-bold ">Soon</div>
-          <div className="text-[1rem]">Average APR</div>
-        </div>
-        <div className="frosty bg-white mx-2 w-full sm:w-[25%] mb-8 dark:bg-[#252525]">
-          <div className="text-[2rem] leading-[44px] font-bold">Soon</div>
-          <div className="text-[1rem]">Total Value Locked</div>
-        </div>
-        <div className="frosty bg-white mx-2 w-full sm:w-[25%] mb-8 dark:bg-[#252525]">
-          <div className="text-[2rem] leading-[44px] font-bold">Soon</div>
-          <div className="text-[1rem]">Treasury Wallet</div>
-        </div>
-      </div>
     </>
   )
 }
