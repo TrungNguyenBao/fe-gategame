@@ -1,21 +1,19 @@
-import React from "react";
-import BestSeller from './BestSellerSection';
-import BrowseGameGate from './BrowseGameGateSection';
-import Featured from './FeaturedSection';
-import Giftcode from './GiftcodeSection';
-import Header from './Header';
-import HighlyRecommended from './HighlyRecommendedSection';
-import HotItems from './HotItemsSection';
-import HowTo from './HowToSection';
-import Incoming from './IncomingSection';
-import NewOnBoardAndTopReviewers from './NewOnBoardAndTopReviewersSection';
-import RecentUpdate from './RecentUpdateSection';
-import TheCommunityRecommend from './TheCommunityRecommendSection';
-import Update from './UpdateSection';
-
+import React from 'react'
+import BestSeller from './BestSellerSection'
+import BrowseGameGate from './BrowseGameGateSection'
+import Featured from './FeaturedSection'
+import Giftcode from './GiftcodeSection'
+import Header from './Header'
+import HighlyRecommended from './HighlyRecommendedSection'
+import HotItems from './HotItemsSection'
+import HowTo from './HowToSection'
+import Incoming from './IncomingSection'
+import NewOnBoardAndTopReviewers from './NewOnBoardAndTopReviewersSection'
+import RecentUpdate from './RecentUpdateSection'
+import TheCommunityRecommend from './TheCommunityRecommendSection'
+import Update from './UpdateSection'
 
 export default function HomePage() {
-
   return (
     <div className="container mx-auto">
       <Header />
@@ -31,7 +29,6 @@ export default function HomePage() {
       <Giftcode />
       <HowTo />
       <BrowseGameGate />
-
 
       {/* <FeatureSection />
       <div className="grid sm:grid-cols-3 gap-4 py-[40px] md:px-[80px] sm:px-[20px]">
