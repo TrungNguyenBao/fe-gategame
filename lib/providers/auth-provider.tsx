@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { sendCode, signin, signup, verifyCode } from '../../lib/services/auth'
 import { useRouter } from 'next/dist/client/router'
 import { createContext, useContext, useEffect, useState } from 'react'
 import { callAPI } from '../api'
@@ -15,94 +16,109 @@ interface User {
   username: string
 }
 export const AuthContext = createContext<{
-  loginAdmin?: (username: string, password: string) => Promise<any>
-  userGetMe?: () => Promise<any>
-  adminGetMe?: () => Promise<any>
-  redirectToAdminPage?: () => void
-  redirectToAdminLoginPage?: () => void
-  logoutAdmin?: () => Promise<any>
-  admin?: User
+  me?: any
+  setMe?: any
+  token?: any,
+  setToken?: any
+  logout?: any
+  getMe?: any
+  login?: any
+  register?: any
+  verify?: any
+  resend?: any
 }>({})
 
+export const INFO_ME = 'info_me'
+export const TOKEN_ME = 'token_me'
+
 export function AuthProvider({ children }: { children: any }) {
-  const PRE_LOGIN_PATHNAME = 'PRE_LOGIN_PATHNAME'
-  const router = useRouter()
-  const alert = useAlert()
-  const [admin, setAdmin] = useState<User>(undefined)
-  console.log('admin', admin)
-  const adminGetMe = async () => {
-    await callAPI({
-      method: 'GET',
-      url: 'https://broadlandmedia.com/api/auth/me',
-      header: {},
-    })
-      .then((res) => {
-        var { data } = res.data
-        setAdmin(data)
-      })
-      .catch((err) => {
-        console.log(err)
-        setAdmin(null)
-      })
+  const [me, setMe] = useState();
+  const [token, setToken] = useState();
+
+  const login = async (loginData: any) => {
+    const { data: { Error, User } } = await signin(loginData);
+    if (User) {
+      window.localStorage.setItem(INFO_ME, JSON.stringify(User))
+      window.localStorage.setItem(TOKEN_ME, JSON.stringify(User?.Token))
+      setMe(User)
+      setToken(User?.Token)
+      // window.location.reload()
+    }
+    return { Error };
   }
 
-  const loginAdmin = async (username: string, password: string) => {
-    return await axios
-      .post<{ data: any }>(
-        'https://broadlandmedia.com/api/auth/login',
-
-        {
-          username: username,
-          password: password,
-        },
-        {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-      .then((res) => {
-        setTokenAdmin(res.data?.data?.accessToken)
-        adminGetMe().then(() => redirectToAdminPage())
-      })
-      .catch((err) => {
-        alert.error('Login failed')
-        setAdmin(null)
-      })
+  const verify = async (data: any) => {
+    const { data: { Error, User } } = await verifyCode(data)
+    if (User) {
+      window.localStorage.setItem(INFO_ME, JSON.stringify(User))
+      window.localStorage.setItem(TOKEN_ME, JSON.stringify(User?.Token))
+      setMe(User)
+      setToken(User?.Token)
+      // window.location.reload()
+    }
+    return { Error };
   }
 
-  const logoutAdmin = async () => {
-    await clearTokenAdmin()
-    setAdmin(null)
-    redirectToAdminLoginPage()
+  const resend = async ({ email }: any) => {
+    const { data: { Error, Result } } = await sendCode({ email })
+    return { Error, Result }
   }
 
-  const redirectToAdminPage = () => {
-    const pathname = localStorage.getItem(PRE_LOGIN_PATHNAME)
-    if (admin) {
-      router.replace('/admin')
+  const logout = () => {
+    window.localStorage.removeItem(INFO_ME)
+    window.localStorage.removeItem(TOKEN_ME)
+    setMe(null)
+    setToken(null)
+  }
+
+  const register = async (data: any) => {
+    const { data: { Error, Result } } = await signup(data);
+    return { Error, Result }
+  }
+
+  const getMe = () => {
+    try {
+      let jsonString
+      let obj
+      jsonString = window.localStorage.getItem(INFO_ME)
+      obj = JSON.parse(jsonString)
+      return obj;
+    } catch {
+      return null;
     }
   }
 
-  const redirectToAdminLoginPage = () => {
-    localStorage.setItem(PRE_LOGIN_PATHNAME, router.pathname)
-    router.replace('/admin/login')
-  }
-
   useEffect(() => {
-    const tokenAdmin = getTokenAdmin()
-    if (admin == undefined && location.pathname.includes('/admin')) adminGetMe()
+    try {
+      let jsonString
+      let obj
+
+      jsonString = window.localStorage.getItem(INFO_ME)
+      obj = JSON.parse(jsonString)
+      setMe(obj);
+
+      jsonString = window.localStorage.getItem(TOKEN_ME)
+      obj = JSON.parse(jsonString)
+      setToken(obj)
+    }
+    catch (ex) {
+      console.log(ex);
+    }
   }, [])
+
   return (
     <AuthContext.Provider
       value={{
-        loginAdmin,
-        redirectToAdminPage,
-        redirectToAdminLoginPage,
-        adminGetMe,
-        logoutAdmin,
-        admin,
+        me,
+        token,
+        setMe,
+        setToken,
+        logout,
+        login,
+        getMe,
+        register,
+        verify,
+        resend,
       }}
     >
       {children}

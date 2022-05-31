@@ -19,17 +19,21 @@ import {
   FaAngleDown,
   FaReadme,
   FaGamepad,
+  FaUser,
+  FaSignOutAlt,
 } from 'react-icons/fa'
 import { Switch } from '@headlessui/react'
 import useScreen from '../../../lib/hooks/useScreen'
 import Link from 'next/link'
 import LoginModal from '../../../components/Login'
 import { BiLogIn } from 'react-icons/bi'
+import { useAuth } from 'lib/providers/auth-provider'
 
 interface PropsType extends ReactProps {}
 export default function Sidebar({ ...props }) {
   const [theme, setTheme] = useState(null)
   const [currentIndexMenu, setCurrentIndexMenu] = useState(0)
+  const auth = useAuth()
 
   const screen = useScreen('md')
   const { isOpenMenu, onCloseLogin, onCloseMenu } = props
@@ -166,33 +170,63 @@ export default function Sidebar({ ...props }) {
                   </Fragment>
                 )
               })}
-              <Button
-                onClick={() => handleClickMenuLogin()}
-                className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
-                style={{ paddingLeft: !mobile ? '15px' : '' }}
-                icon={<RiLoginBoxLine />}
-                iconClassName={'text-[20px] mr-2'}
-                text={
-                  <div className="flex items-center font-semibold">
-                    <span>{'Sign In'}</span>
-                  </div>
-                }
-              ></Button>
-              <Button
-                onClick={() => handleClickMenuLogin()}
-                className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
-                style={{ paddingLeft: !mobile ? '15px' : '' }}
-                icon={<VscAccount />}
-                iconClassName={'text-[20px] mr-2'}
-                text={
-                  <div className="flex items-center font-semibold">
-                    <span>{'Register'}</span>
-                  </div>
-                }
-              ></Button>
+              {!auth.me && (
+                <>
+                  <Button
+                  onClick={() => handleClickMenuLogin()}
+                  className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
+                  style={{ paddingLeft: !mobile ? '15px' : '' }}
+                  icon={<RiLoginBoxLine />}
+                  iconClassName={'text-[20px] mr-2'}
+                  text={
+                    <div className="flex items-center font-semibold">
+                      <span>{'Sign In'}</span>
+                    </div>
+                  }
+                  ></Button>
+                  <Button
+                    onClick={() => handleClickMenuLogin()}
+                    className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
+                    style={{ paddingLeft: !mobile ? '15px' : '' }}
+                    icon={<VscAccount />}
+                    iconClassName={'text-[20px] mr-2'}
+                    text={
+                      <div className="flex items-center font-semibold">
+                        <span>{'Register'}</span>
+                      </div>
+                    }
+                  ></Button>
+                </>
+              )}
+              
             </div>
           ))}
         </div>
+        {auth.me && (
+          <div className="relative group text-white w-full">
+            <a className="flex gap-2 items-center w-full" onClick={() => {}} id="user-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div className="w-[32px] pl-2">
+                <img src={auth.me.AvatarPath} className="-mt-4 rounded-full w-[32px] min-w-[32px]" />
+              </div>
+              <div className="text-14 break-all leading-tight pb-4 pl-2 pr-2">
+                <div className="font-semibold mb-1">{auth.me.UserName}</div>
+                <div className="text-13">
+                  <p>{auth.me.Email}</p>
+                </div>
+              </div>
+            </a>
+            <div className="hidden group-hover:flex gap-4 min-w-28 absolute bottom-0 bg-gray-700 left-[96%] flex-col p-4 px-6 whitespace-nowrap rounded-xl font-semibold" aria-labelledby="user-dropdown">
+              <a className="text-14 flex items-center gap-2 hover:text-blue-400" href="#">
+                <FaUser/>
+                Profile
+              </a>
+              <a onClick={auth.logout} className="text-14 flex items-center gap-2 hover:text-blue-400" href="#">
+                <FaSignOutAlt/>
+                Sign Out
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </>
   )

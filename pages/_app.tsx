@@ -1,14 +1,14 @@
-import '../styles/style.scss'
-import { ReactElement, ReactNode, useEffect } from 'react'
-import { Fragment } from 'react'
 import type { NextPage } from 'next'
-import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
-import SEO from '../next-seo.config'
-import { AlertProvider } from '../lib/providers/alert-dialog'
-import { ToastProvider } from '../lib/providers/toast-provider'
+import type { AppProps } from 'next/app'
+import { Fragment, ReactElement, ReactNode } from 'react'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { AlertProvider } from '../lib/providers/alert-dialog'
+import { AuthProvider } from '../lib/providers/auth-provider'
+import { ToastProvider } from '../lib/providers/toast-provider'
+import SEO from '../next-seo.config'
+import '../styles/style.scss'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -40,7 +40,8 @@ export default function MyApp({
   }
   return (
     <>
-      <DefaultSeo {...SEO} />
+      <AuthProvider>
+        <DefaultSeo {...SEO} />
         <ToastProvider>
           <AlertProvider>
             <Layout {...layoutProps}>
@@ -48,6 +49,7 @@ export default function MyApp({
             </Layout>
           </AlertProvider>
         </ToastProvider>
+      </AuthProvider>
     </>
   )
 }

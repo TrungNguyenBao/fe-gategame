@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { setupNetwork } from '../../requests'
 import { CHAIN_ID_HEX } from '../../constants'
 import LoginModal from '../../components/Login'
+import { useAuth } from '../../lib/providers/auth-provider'
 
 declare global {
   interface Window {
@@ -24,6 +25,12 @@ export function DefaultLayout({ ...props }) {
   // const { logout, user, chainId, isAuthenticated, enableWeb3 } = useMoralis()
   const [openMenu, setOpenMenu] = useState(false)
   const [openLogin, setOpenLogin] = useState(false)
+
+  const auth = useAuth()
+
+  useEffect(() => {
+    setOpenLogin(false)
+  }, [auth.me])
 
   return (
     <div className="w-full dark:bg-[#101111]">

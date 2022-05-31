@@ -1,8 +1,9 @@
+import { INFO_ME, TOKEN_ME, useAuth } from '../../lib/providers/auth-provider'
 import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { AiOutlineClose } from 'react-icons/ai'
 import useDevice from '../../lib/hooks/useDevice'
-import { login, signup } from '../../lib/services/auth'
+import { signin, signup } from '../../lib/services/auth'
 import { Dialog } from '../shared/dialog/dialog'
 import Panel from '../shared/panel'
 
@@ -147,6 +148,99 @@ const LoginModal: React.FC<LoginModalProps> = ({
 }
 export default LoginModal
 
+
+const RegisterVerify = ({ email }: any) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    watch,
+    setError,
+    clearErrors,
+  } = useForm()
+  const auth = useAuth()
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (data: any) => {
+    console.log(data)
+    setLoading(true)
+    const { Error, Result } = await auth.verify({
+      code: data.code,
+      email
+    });
+    if (Error) {
+      setError('registerError', { type: 'custom', message: Error });
+      setLoading(false)
+      return;
+    }
+  }
+
+  const resendCode = async () => {
+    setLoading(true)
+    const { Error, Result } = await auth.resend({
+      email
+    });
+    if (Error) {
+      setError('registerError', { type: 'custom', message: Error });
+      setLoading(false)
+      return;
+    }
+    setLoading(false)
+    setSent(true)
+    setTimeout(() => {
+      setSent(false)
+    }, 3000)
+  }
+
+  return (
+    <form className={loading ? 'opacity-60 pointer-events-none' : ''} onSubmit={e => {
+      clearErrors()
+      handleSubmit(onSubmit)(e)
+    }}>
+      <div className="mb-3 mt-3">
+        <label
+          className="block text-[#f3efefad] text-sm mb-2 pt-4"
+          htmlFor="code"
+        >
+          We have sent a verify code to <a className='text-blue-300'>{email}</a>. Please check your mail to get the code. <br /><br />
+          Verify Code:
+        </label>
+        <input
+          type="text"
+          className="form-control block w-full px-4 py-2 text-16 font-normal text-[#f3efefad] bg-black bg-clip-padding border border-solid border-black rounded transition ease-in-out m-0 focus:text-[#f3efefad] focus:bg-black focus:border-black focus:outline-none"
+          placeholder="Input your code here"
+          id="code"
+          aria-invalid={errors.username ? 'true' : 'false'}
+          {...register('code', {
+            required: 'Please enter your code',
+          })}
+        />
+        <a onClick={resendCode} className={`text-blue-400 mt-2 block text-right cursor-pointer active:opacity-50 ${sent ? 'pointer-events-none opacity-30' : ''}`}>Resend verify code</a>
+        {errors.username && (
+          <span className="text-red-400" role="alert">
+            {errors.code.message}
+          </span>
+        )}
+      </div>
+      {errors.registerError && (
+        <span className="block text-red-400 px-2 pb-2" role="alert">
+          {errors.registerError.message}
+        </span>
+      )}
+      <button
+        type="submit"
+        className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+        data-mdb-ripple="true"
+        data-mdb-ripple-color="light"
+      >
+        Verify
+      </button>
+    </form>
+  )
+}
+
 const Register = () => {
   const {
     register,
@@ -155,28 +249,41 @@ const Register = () => {
     reset,
     watch,
     setError,
+    clearErrors
   } = useForm()
-
+  const auth = useAuth()
+  const [showVerifyOtp, setShowVerifyOtp] = useState<boolean>(false)
   const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState(false);
   const password = useRef({})
   password.current = watch('password', '')
+
   const onSubmit = async (data: any) => {
     console.log(data)
 
-    const { data: { Error } } = await signup(data);
+    setLoading(true)
+    setEmail(data?.email)
+
+    const { Error, Result } = await auth.register(data);
     if (Error) {
       setError('registerError', { type: 'custom', message: Error });
       setLoading(false)
       return;
     }
-    reset();
+
+    if (Result === 1 || Result === "1") {
+      setShowVerifyOtp(true)
+    }
 
     // await login(data.email, data.password);
     // reset()
   }
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+  return showVerifyOtp ? <RegisterVerify email={email} /> : (
+    <form className={loading ? 'opacity-60 pointer-events-none' : ''} onSubmit={e => {
+      clearErrors()
+      handleSubmit(onSubmit)(e)
+    }}>
       <div className="mb-3 mt-3">
         <label
           className="block text-[#f3efefad] text-sm mb-2"
@@ -306,10 +413,10 @@ const Register = () => {
         // })}
         />
         {/* {errors.referer_code && (
-          <span className="text-red-400" role="alert">
-            {errors.referer_code.message}
-          </span>
-        )} */}
+        <span className="text-red-400" role="alert">
+          {errors.referer_code.message}
+        </span>
+      )} */}
       </div>
       <div className="flex justify-between items-center mb-4">
         <div className="form-group form-check">
@@ -355,8 +462,8 @@ const Register = () => {
       >
         Register
       </button>
-    </form>
-  )
+    </form>)
+
 }
 
 const Login = () => {
@@ -366,25 +473,31 @@ const Login = () => {
     formState: { errors },
     reset,
     setError,
+    clearErrors
   } = useForm()
 
   const [loading, setLoading] = useState<boolean>(false)
+
+  const auth = useAuth();
 
   const onSubmit = async (data: any) => {
     console.log(data)
 
     setLoading(true)
-    const { data: { Error } } = await login(data);
+    const { Error } = await auth.login(data);
     if (Error) {
       setError('loginError', { type: 'custom', message: Error });
-      setLoading(false)
       return;
     }
-    reset();
+
+    setLoading(false)
   }
 
   return (
-    <form className={loading ? 'opacity-60 pointer-events-none' : ''} onSubmit={handleSubmit(onSubmit)}>
+    <form className={loading ? 'opacity-60 pointer-events-none' : ''} onSubmit={e => {
+      clearErrors()
+      handleSubmit(onSubmit)(e)
+    }}>
       <p className="text-[#f3efefad] my-3">
         The platform based on blockchain technology, data will be guaranteed
         immutability and transparency.
