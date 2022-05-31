@@ -39,7 +39,7 @@ const Carousel = () => {
     }
   }
 
-  const isDisabled = (direction) => {
+  const isDisabled = (direction: any) => {
     if (direction === 'prev') {
       return currentIndex <= 0
     }

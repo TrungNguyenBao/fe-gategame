@@ -27,7 +27,7 @@ import useScreen from '../../../lib/hooks/useScreen'
 import Link from 'next/link'
 import LoginModal from '../../../components/Login'
 import { BiLogIn } from 'react-icons/bi'
-import { useAuth } from 'lib/providers/auth-provider'
+import { useAuth } from '../../../lib/providers/auth-provider'
 
 interface PropsType extends ReactProps {}
 export default function Sidebar({ ...props }) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTable, useSortBy } from 'react-table'
+import { useTable, useSortBy, Column } from 'react-table'
 
 const data = [
   {
@@ -30,7 +30,13 @@ const data = [
   },
 ]
 
-function Table({ columns, data }) {
+interface Props {
+  columns: Array<Column<object>>;
+  data: Array<object>;
+}
+
+
+const Table: React.FC<Props> = ({ columns, data }) => {
   // Use the state and functions returned from useTable to build your UI
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable(
@@ -50,7 +56,7 @@ function Table({ columns, data }) {
             className="py-2 border-b-0.5 border-t-0.5 border-t-[#3e3e3e] border-b-[#3e3e3e]"
             {...headerGroup.getHeaderGroupProps()}
           >
-            {headerGroup.headers.map((column) => (
+            {/* {headerGroup.headers.map((column) => (
               // <th {...column.getHeaderProps()}>
               <th className='py-2' {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render('Header')}
@@ -58,7 +64,7 @@ function Table({ columns, data }) {
                   {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
                 </span>
               </th>
-            ))}
+            ))} */}
           </tr>
         ))}
       </thead>
