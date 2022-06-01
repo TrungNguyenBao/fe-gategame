@@ -23,6 +23,7 @@ module.exports = {
   // purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
+      xxs: '320px',
       xs: '480px',
       sm: '640px',
       md: '768px',
@@ -69,7 +70,8 @@ module.exports = {
         body: ['hk_grotesk', 'sans-serif'],
       },
       backgroundImage: {
-        customGradientBlackXs: 'linear-gradient(90deg,rgba(3,3,3,.5),rgba(0,0,0,0))'
+        customGradientBlackXs:
+          'linear-gradient(90deg,rgba(3,3,3,.5),rgba(0,0,0,0))',
       },
       // boxShadow: (theme) => {
       //   const colors = {

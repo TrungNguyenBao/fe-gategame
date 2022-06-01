@@ -69,7 +69,9 @@ export function DefaultLayout({ ...props }) {
             !openMenu ? 'md:pl-48' : 'md:pl-14'
           } `}
         >
-          <div className="px-32 py-10 min-h-screen">{props.children}</div>
+          <div className="px-32 py-10 xxs:px-[40px] xxs:py-[30px] min-h-screen bg-[#030303]">
+            {props.children}
+          </div>
           <Footer />
         </div>
       </div>
