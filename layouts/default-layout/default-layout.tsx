@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Slideout } from '../../components/shared/dialog/slideout'
 import useScreen from '../../lib/hooks/useScreen'
 import { DefaultHead } from '../default-head'
