@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -6,33 +7,43 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Title2, Title6 } from '../../components/Common/Title';
 import ItemRating from '../../components/Items/ItemRating';
 import ItemTags from '../../components/Items/ItemTags';
+import { slugGame } from '../../lib/helpers/slugGame';
+import { useHomePageContext } from '../../pages/index';
+
 
 const Header: React.FC = () => {
   const router = useRouter()
+  const lang = "en"
+  const { sliders }: any = useHomePageContext()
 
   return (
     <>
-      <div className="flex container mt-10">
+      <div className="flex container mt-10 mb-16">
         <div className="w-2/3">
           <Swiper
             pagination={true}
             modules={[Pagination, Autoplay]}
             className="mySwiper"
           >
-            {[1, 2, 3].map((key) => (
-              <SwiperSlide key={key}>
-                <img className='relative w-full h-[564px] object-cover rounded-xl' src='https://cdn.gategame.io/storage/upload/product/HoDHUHGezKDh0lWdzPnVa77O1sXCM8Khtx6GFmRN.jpg?w=877&apm;auto=compress,format' />
-                <div className='absolute bottom-8 left-8' >
-                  <ItemRating className='mb-4' />
-                  <Title6 className='mb-4'>
-                    <img className='h-[15px] w-[15px]' src='https://gategame.io/storage/upload/product/BxRFQbOPIys9t4MccRxWHgM9O5eBzXqJylao6zyy.png?w=16&apm;auto=compress,format' />
-                    <span>GGWP</span>
-                  </Title6>
-                  <div className='text-28 font-bold mb-4'><a href='https://gategame.io/en/stellaverse-dynasty-p11215.html'>Stellaverse: DYNASTY</a></div>
-                  <ItemTags tags={['multiverse', 'play2earn', 'win2earn']} />
-                </div>
-              </SwiperSlide>
-            ))}
+            {sliders?.map((item: any) => {
+              const game: any = item.Translations.find((trans: any) => trans.Language === lang)
+              return (
+                <SwiperSlide key={game.Id}>
+                  <img className='relative w-full h-[564px] object-cover rounded-xl' src={game.Avatar} />
+                  <div className='absolute bottom-8 left-8' >
+                    <ItemRating className='mb-4' />
+                    <Title6 className='mb-4'>
+                      <img className='h-[15px] w-[15px]' src='/images/icon/ggwp.png' />
+                      <span>GGWP</span>
+                    </Title6>
+                    <div className='text-28 font-bold mb-4'>
+                      <Link href={slugGame(game.Name, game.Id)} locale={lang}>{game.Name}</Link>
+                    </div>
+                    <ItemTags tags={['multiverse', 'play2earn', 'win2earn']} />
+                  </div>
+                </SwiperSlide>
+              )
+            })}
           </Swiper>
         </div>
         <div className="w-1/3 px-8">
