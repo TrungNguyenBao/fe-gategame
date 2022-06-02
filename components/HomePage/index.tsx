@@ -16,7 +16,6 @@ import Update from './UpdateSection';
 
 
 export default function HomePage() {
-
   return (
     <div className="container mx-auto">
       <Header />
@@ -33,7 +32,6 @@ export default function HomePage() {
       <Giftcode />
       <HowTo />
       <BrowseGameGate />
-
 
       {/* <FeatureSection />
       <div className="grid sm:grid-cols-3 gap-4 py-[40px] md:px-[80px] sm:px-[20px]">

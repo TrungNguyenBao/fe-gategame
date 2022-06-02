@@ -1,16 +1,12 @@
 import { NextSeo } from 'next-seo'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Slideout } from '../../components/shared/dialog/slideout'
 import useScreen from '../../lib/hooks/useScreen'
 import { DefaultHead } from '../default-head'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
 import Sidebar from './components/sidebar'
-// import { useMoralis } from 'react-moralis'
-import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { setupNetwork } from '../../requests'
-import { CHAIN_ID_HEX } from '../../constants'
 import LoginModal from '../../components/Login'
 import { useAuth } from '../../lib/providers/auth-provider'
 
@@ -49,8 +45,8 @@ export function DefaultLayout({ ...props }) {
               setOpenMenu(false)
             }}
             isOpenMenu={openMenu}
-            onCloseLogin={()=>setOpenLogin(true)}
-            onCloseMenu={()=>setOpenMenu(false)}
+            onCloseLogin={() => setOpenLogin(true)}
+            onCloseMenu={() => setOpenMenu(false)}
           />
         ) : (
           <Slideout
@@ -65,18 +61,24 @@ export function DefaultLayout({ ...props }) {
                 setOpenMenu(true)
               }}
               isOpenMenu={openMenu}
-              onCloseLogin={()=>setOpenLogin(true)}
-              onCloseMenu={()=>setOpenMenu(false)}
+              onCloseLogin={() => setOpenLogin(true)}
+              onCloseMenu={() => setOpenMenu(false)}
             />
           </Slideout>
         )}
-        <LoginModal isOpen={openLogin} logout={() => {}} onClose={() => setOpenLogin(false)} />
+        <LoginModal
+          isOpen={openLogin}
+          logout={() => {}}
+          onClose={() => setOpenLogin(false)}
+        />
         <div
           className={`flex-1 flex flex-col transition-all duration-300 dark:bg-[#101111] dark:text-white ${
             !openMenu ? 'md:pl-48' : 'md:pl-14'
           } `}
         >
-          <div className="p-6 min-h-screen">{props.children}</div>
+          <div className="px-32 py-10 xxs:px-[40px] xxs:py-[30px] min-h-screen bg-[#030303]">
+            {props.children}
+          </div>
           <Footer />
         </div>
       </div>
