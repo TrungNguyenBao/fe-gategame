@@ -2,8 +2,14 @@ import { Title6 } from "../../components/Common/Title";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
+interface IGameItemHorizontalProps {
+    item?: any
+}
 
-const GameItemHorizontal: React.FC = () => {
+const GameItemHorizontal: React.FC<IGameItemHorizontalProps> = ({item}) => {
+    const lang = "en"
+    const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
+    
     return (
         <div className="border-b-0.5 border-[#333] bg-grayBg first:rounded-t-xl last:rounded-b-xl last:border-b-0">
             <div className="p-4">
@@ -11,7 +17,7 @@ const GameItemHorizontal: React.FC = () => {
                     <div className="">
                         <div className="">
                             <a href="https://gategame.io/stellaverse-frontier-p11163.html">
-                                <img className="w-[120px] h-[75px] object-cover rounded-xl" src="https://cdn.gategame.io/storage/upload/product/HoDHUHGezKDh0lWdzPnVa77O1sXCM8Khtx6GFmRN.jpg?h=75&amp;auto=compress,format" alt="" />
+                                <img className="w-[120px] h-[75px] object-cover rounded-xl" src={attributes.Avatar} alt="" />
                             </a>
                         </div>
                     </div>
@@ -22,8 +28,8 @@ const GameItemHorizontal: React.FC = () => {
                                 GGWP
                             </Title6>
                             <h3 className="text-16 leading-7 font-semibold my-1">
-                                <a className="" href="https://gategame.io/stellaverse-frontier-p11163.html">
-                                    Stellaverse: FRONTIER
+                                <a className="" href="#">
+                                    {attributes.Name}
                                 </a>
                             </h3>
                             <div className="">

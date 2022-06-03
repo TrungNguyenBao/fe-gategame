@@ -1,9 +1,12 @@
+import { useHomePageContext } from "../../pages";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Title2 } from "../../components/Common/Title";
 import GameHighlyRecommendedItem from "../../components/Items/GameHighlyRecommendedItem";
 
 const HighlyRecommendedSection: React.FC = () => {
+    const { highlyRecommendedItems }: any = useHomePageContext()
+
     return <section className="mb-16">
         <Title2 className="mb-4">Highly Recommended</Title2>
         <Swiper
@@ -15,9 +18,9 @@ const HighlyRecommendedSection: React.FC = () => {
             modules={[Pagination]}
             className="mySwiper"
         >
-            {[1, 2].map((key) => (
-                <SwiperSlide key={key}>
-                    <GameHighlyRecommendedItem />
+            {highlyRecommendedItems.map((item: any) => (
+                <SwiperSlide key={item.Id}>
+                    <GameHighlyRecommendedItem item={item} />
                 </SwiperSlide>
             ))}
 

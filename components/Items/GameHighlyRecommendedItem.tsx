@@ -4,13 +4,21 @@ import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
 
-const GameHighlyRecommendedItem: React.FC = () => {
+interface IGameHighlyRecommendedItemProps {
+    item?: any
+}
+
+
+const GameHighlyRecommendedItem: React.FC<IGameHighlyRecommendedItemProps> = ({ item }) => {
+    const lang = "en"
+    const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
+    
     return (
         <div><div className="rounded-xl overflow-hidden">
             <div className="">
                 <div className="relative">
-                    <a href="https://gategame.io/stellaverse-frontier-p11163.html"  >
-                        <img className="w-full" src="https://cdn.gategame.io/storage/upload/product/HoDHUHGezKDh0lWdzPnVa77O1sXCM8Khtx6GFmRN.jpg?w=650&amp;auto=compress,format" />
+                    <a href="#"  >
+                        <img className="w-full" src={attributes.Avatar} />
                         <ItemOverlayCover />
                         <ItemRating className="absolute bottom-4 left-4" />
                     </a>

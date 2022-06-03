@@ -1,25 +1,32 @@
+import { slugGame } from "../../lib/helpers/slugGame";
 import { Title6 } from "../../components/Common/Title";
 import ItemOverlayCover from "./ItemOverlayCover";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
+interface IGameRecomendationItemProps {
+    item?: any
+}
 
-const GameRecomendationItem: React.FC = () => {
+const GameRecomendationItem: React.FC<IGameRecomendationItemProps> = ({ item }) => {
+    const lang = "en"
+    const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
+
     return (
         <div className="flex rounded-xl overflow-hidden">
             <div className="relative w-2/3">
                 <a href="">
-                    <img className="w-full" src="https://cdn.gategame.io/storage/upload/product/80r9evZwYYsf2kYc6vVcdZvcHrrzBUbFDpXlDkEd.png?w=877&amp;auto=compress,format" />
+                    <img className="w-full h-[450px] object-cover" src={attributes.Avatar} />
                     <ItemOverlayCover />
                 </a>
                 <div className="absolute bottom-8 left-8">
                     <Title6 className="text-gray-200">
-                        <img src="https://cdn.gategame.io/storage/upload/product/rH0pHyWInbfN0sMEowxrcWt2enAZQ5pFM95tQle8.png?w=16&amp;auto=compress,format" />
+                        <img src="/images/icon/ggwp.png" />
                         GGWP
                     </Title6>
                     <h3 className="text-28 leading-normal font-semibold my-1">
-                        <a className="" href="https://gategame.io/heroes-origin-p11293.html" >
-                            Heroes Origin
+                        <a className="" href={slugGame(attributes.Name, attributes.Id)} >
+                            {attributes.Name}
                         </a>
                     </h3>
                     <div className="">
@@ -48,14 +55,16 @@ const GameRecomendationItem: React.FC = () => {
                         </div>
                     </div>
                     <p className="text-16 mb-4">
-                        Boss hunting is a pretty good task in the game!!!...
+                        {item?.Reviews?.Data?.[0]?.Content}
                     </p>
-                    <a href="#" className="text-[#0a85ed] font-semibold">Read full review</a>
+                    {item?.Reviews?.Data?.HasMore && (
+                        <a href="#" className="text-[#0a85ed] font-semibold">Read full review</a>
+                    )}
                     <a href="#" className=" absolute bottom-6 left-8">
                         <div className="flex gap-4 items-center ">
-                            <img src="/images/icon/user1.png" />
+                            <img className="w-16 h-16 object-cover rounded-full" src={item?.Reviews?.Data?.[0]?.User?.AvatarPath} />
                             <div>
-                                <h3 className="font-semibold">trevorgoodies ·</h3>
+                                <h3 className="font-semibold">{item?.Reviews?.Data?.[0]?.User?.Name}</h3>
                                 <span className="text-12">10</span>
                             </div>
                         </div>

@@ -1,11 +1,17 @@
 import ProductItemType from "./ProductItemType";
+interface IProductItemProps {
+    item?: any,
+}
 
-const ProductItem: React.FC = () => {
+const ProductItem: React.FC<IProductItemProps> = ({ item }) => {
+    const lang = "en"
+    const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
+
     return (
         <div className="flex flex-col">
-            <div className="relative rounded-t-lg overflow-hidden">
+            <div className="relative rounded-t-lg overflow-hidden w-full pb-[100%]">
                 <a href="#">
-                    <img className="aspect-square" src="/images/icon/product.png" />
+                    <img className="absolute w-full h-full top-0 left-0 object-cover" src={attributes?.Avatar} />
                     <ProductItemType type={"rare"} />
                 </a>
             </div>
@@ -15,7 +21,7 @@ const ProductItem: React.FC = () => {
                 </span>
                 <h3>
                     <a className="font-bold" href="#">
-                        LIGHTNING PYLON
+                        {attributes?.Name}
                     </a>
                 </h3>
                 <p>

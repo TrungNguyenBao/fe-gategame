@@ -3,8 +3,10 @@ import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Title2 } from "../Common/Title";
 import ProductItem from "../../components/Items/ProductItem";
+import { useHomePageContext } from "../../pages";
 
 const BestSeller: React.FC = () => {
+    const { bestSellersItems }: any = useHomePageContext()
     return (
         <section className="container">
             <Title2 className="mb-4">Best Seller</Title2>
@@ -16,9 +18,9 @@ const BestSeller: React.FC = () => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                    {[1, 2, 3, 4, 5].map((data) => (
-                        <SwiperSlide key={data} className=" " >
-                            <ProductItem />
+                    {bestSellersItems.map((item: any) => (
+                        <SwiperSlide key={item.Id} className=" " >
+                            <ProductItem item={item}/>
                         </SwiperSlide>
                     ))}
                 </Swiper>
