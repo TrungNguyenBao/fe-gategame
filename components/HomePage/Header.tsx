@@ -82,11 +82,14 @@ const ItemGame = ({ name, games }: any) => {
               <Link
                 className="text-black cursor-pointer"
                 href={slugGame(game.Name, game.Id)}
+                passHref
               >
-                <img
-                  className="w-[50px] h-[50px] object-cover rounded-full"
-                  src={game.Avatar}
-                />
+                <a>
+                  <img
+                    className="w-[50px] h-[50px] object-cover rounded-full"
+                    src={game.Avatar}
+                  />
+                </a>
               </Link>
             </li>
           )
