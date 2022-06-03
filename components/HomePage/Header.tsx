@@ -14,7 +14,7 @@ import { useHomePageContext } from '../../pages/index';
 const Header: React.FC = () => {
   const router = useRouter()
   const lang = "en"
-  const { sliders }: any = useHomePageContext()
+  const { sliders, genres }: any = useHomePageContext()
 
   return (
     <>
@@ -51,9 +51,11 @@ const Header: React.FC = () => {
             <Title2 className='p-6 pb-2'>
               Top Genres
             </Title2>
-            <ItemGame />
-            <ItemGame />
-            <ItemGame />
+            {
+              Object.entries(genres).map(([key, games]) => (
+                <ItemGame key={key} games={games} name={key} />
+              ))
+            }
           </div>
         </div>
       </div>
@@ -62,32 +64,36 @@ const Header: React.FC = () => {
 }
 export default Header
 
-const ItemGame = () => {
+const ItemGame = ({ name, games }: any) => {
+  const lang = "en"
   return (
-    <>
-      <div className="px-6 py-4 border-b-0.5 border-[#333] last:border-0">
-        <p className="flex items-center mb-4">
-          <a className='text-gray-500 font-semibold ' href="#">
-            Battle Arena
-          </a>
-          <MdOutlineKeyboardArrowRight size={20} color={"#0a85ed"} />
-        </p>
-        <ul className="flex flex-wrap gap-4 mb-2">
-          {[1, 2, 3, 4, 5, 8].map((key) => (
-            <li key={key}>
-              <a
-                className="text-black"
-                href="#"
+    <> {typeof games === "object" && (<div className="px-6 py-4 border-b-0.5 border-[#333] last:border-0">
+      <p className="flex items-center mb-4">
+        <a className='text-gray-500 font-semibold ' href="#">
+          {name}
+        </a>
+        <MdOutlineKeyboardArrowRight size={20} color={"#0a85ed"} />
+      </p>
+      <ul className="flex flex-wrap gap-4 mb-2">
+        {games?.map((item: any) => {
+          const game = item?.Translations?.find((t: any) => t.Language === lang)
+          return (
+            <li key={game.Id}>
+              <Link
+                className="text-black cursor-pointer"
+                href={slugGame(game.Name, game.Id)}
               >
                 <img
-                  className="w-[50px]"
-                  src="https://cdn.gategame.io/storage/upload/product/GuwpSenPCMjsbbABQzq9OZSRoVJ4axoxfkA5ABkc.png?w=44&amp;auto=compress,format"
+                  className="w-[50px] h-[50px] object-cover rounded-full"
+                  src={game.Avatar}
                 />
-              </a>
+              </Link>
             </li>
-          ))}
-        </ul>
-      </div>
+          )
+        })}
+      </ul>
+    </div>)}
+
     </>
   )
 }
