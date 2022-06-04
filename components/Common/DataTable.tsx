@@ -32,7 +32,7 @@ export const DataTable: React.FC<IDataTableProps> = ({ data, columns }) => {
 
                         })}
                     </tr>
-                )) : <tr><td className="text-14 p-8 text-center bg-[rgba(255,255,255,0.025)]" colSpan={9999}>No data</td></tr>}
+                )) : <tr><td className="text-14 p-8 text-center bg-[rgba(255,255,255,0.025)] h-[375px]" colSpan={9999}>No data</td></tr>}
             </tbody>
         </table>
     )
