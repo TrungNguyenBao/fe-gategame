@@ -1,13 +1,15 @@
+import { useHomePageContext } from "../../lib/providers/homepage"
 import { Title2 } from "../Common/Title"
 import GameItemHorizontal from "../Items/GameHorizontalItem"
 
 export const NewOnBoard: React.FC = () => {
+    const { newOnBoardItems }: any = useHomePageContext()
     return (
         <div>
             <Title2 className="mb-4">New on Board</Title2>
             <div>
-                {[1, 2, 3, 4, 5, 6].map((key) => (
-                    <GameItemHorizontal key={key}/>
+                {newOnBoardItems.map((item: any) => (
+                    <GameItemHorizontal key={item.Id} item={item}/>
                 ))}
             </div>
         </div>

@@ -1,18 +1,26 @@
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { slugGame } from '../../lib/helpers/slugGame';
+import { useLanguage } from '../../lib/providers/language';
 import { Title6 } from "../Common/Title";
 import ItemOverlayCover from "./ItemOverlayCover";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
-const GameMdItem: React.FC = () => {
+interface IGameMdItemProps {
+    item?: any
+}
+
+const GameMdItem: React.FC<IGameMdItemProps> = ({ item }) => {
+    const { lang } = useLanguage()
+    const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
+
     return (
         <div>
             <div className="rounded-xl overflow-hidden">
                 <div className="recent-box">
                     <div className="relative">
                         <a href="#" >
-                            <img className="h-[380px] object-cover" src="https://cdn.gategame.io/storage/upload/product/Pk2MVGT24ISedtZaedWErXt4TN7GVYY7818SkeDj.jpg?h=335&amp;auto=compress,format" />
+                            <img className="h-[380px] object-cover" src={attributes.Avatar} />
                             <ItemOverlayCover />
                             <ItemRating className="absolute bottom-4 left-4" />
                         </a>
@@ -40,8 +48,8 @@ const GameMdItem: React.FC = () => {
                             </div>
                         </div>
                         <h3 className="text-16 leading-7 font-semibold my-2">
-                            <a className="text-title" href="https://gategame.io/stellaverse-frontier-p11163.html" >
-                                Stellaverse: FRONTIER
+                            <a className="text-title" href={slugGame(attributes.Name, attributes.Id)} >
+                                {attributes.Name}
                             </a>
                         </h3>
                         <div className="mb-2">
@@ -52,13 +60,13 @@ const GameMdItem: React.FC = () => {
                         </div>
                         <ul className="flex justify-start gap-2 text-12 text-gray-500 font-semibold">
                             <li>
-                                <a className="flex gap-1" >2 <img className='w-[11px]' src="/images/icon/heart.svg" alt="Like" /></a>
+                                <a className="flex gap-1" >{item.LikeCount} <img className='w-[11px]' src="/images/icon/heart.svg" alt="Like" /></a>
                             </li>
                             <li>
-                                <a className="flex gap-1" href="#" >2 <img src="/images/icon/comment.svg" alt="Comment" /> </a>
+                                <a className="flex gap-1" href="#" >{item.ReviewCount} <img src="/images/icon/comment.svg" alt="Comment" /> </a>
                             </li>
                             <li>
-                                <a className="flex gap-1" href="#" >0 <img src="/images/icon/share.svg" alt="Share" /> </a>
+                                <a className="flex gap-1" href="#" >{item.ShareCount} <img src="/images/icon/share.svg" alt="Share" /> </a>
                             </li>
                         </ul>
                     </div>

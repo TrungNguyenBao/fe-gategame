@@ -1,9 +1,11 @@
+import { useHomePageContext } from "../../lib/providers/homepage";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import GameSmItem from "../../components/Items/GameSmItem";
 import { Title2 } from "../Common/Title";
 
 const RecentUpdate: React.FC = () => {
+    const { recentUpdateItems }: any = useHomePageContext()
     return <section className="mb-16">
         <Title2 className="mb-4">Recent Update</Title2>
 
@@ -14,9 +16,9 @@ const RecentUpdate: React.FC = () => {
             modules={[Pagination]}
             className="mySwiper"
         >
-            {[1, 2, 3, 4, 6, 7, 8, 9, 10].map((key) => (
-                <SwiperSlide key={key}>
-                    <GameSmItem />
+            {recentUpdateItems.map((item: any) => (
+                <SwiperSlide key={item.Id}>
+                    <GameSmItem item={item}/>
                 </SwiperSlide>
             ))}
 
