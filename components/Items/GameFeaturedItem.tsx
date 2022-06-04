@@ -1,3 +1,4 @@
+import { useLanguage } from "../../lib/providers/language";
 import { slugGame } from "../../lib/helpers/slugGame";
 import { Title6 } from "../Common/Title";
 import ItemOverlayCover from "./ItemOverlayCover";
@@ -10,7 +11,7 @@ interface IGameItemFeaturedProps {
 
 
 const GameItemFeatured: React.FC<IGameItemFeaturedProps> = ({ item }) => {
-    const lang = "en"
+    const { lang } = useLanguage()
     const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
     
     return (

@@ -1,3 +1,4 @@
+import { useLanguage } from '../../lib/providers/language';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -8,12 +9,12 @@ import { Title2, Title6 } from '../../components/Common/Title';
 import ItemRating from '../../components/Items/ItemRating';
 import ItemTags from '../../components/Items/ItemTags';
 import { slugGame } from '../../lib/helpers/slugGame';
-import { useHomePageContext } from '../../pages/index';
+import { useHomePageContext } from '../../lib/providers/homepage';
 
 
 const Header: React.FC = () => {
   const router = useRouter()
-  const lang = "en"
+  const { lang } = useLanguage()
   const { sliders, genres }: any = useHomePageContext()
 
   return (
@@ -65,7 +66,7 @@ const Header: React.FC = () => {
 export default Header
 
 const ItemGame = ({ name, games }: any) => {
-  const lang = "en"
+  const { lang } = useLanguage()
   return (
     <> {typeof games === "object" && (<div className="px-6 py-4 border-b-0.5 border-[#333] last:border-0">
       <p className="flex items-center mb-4">

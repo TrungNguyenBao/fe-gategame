@@ -1,4 +1,4 @@
-import { useHomePageContext } from "../../pages"
+import { useHomePageContext } from "../../lib/providers/homepage"
 import { Title2 } from "../Common/Title"
 import GameItemHorizontal from "../Items/GameHorizontalItem"
 

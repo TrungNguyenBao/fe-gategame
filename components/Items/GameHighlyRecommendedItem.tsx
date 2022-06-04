@@ -1,3 +1,4 @@
+import { useLanguage } from "../../lib/providers/language";
 import { Title6 } from "../../components/Common/Title";
 import ItemOverlayCover from "./ItemOverlayCover";
 import ItemRating from "./ItemRating";
@@ -10,15 +11,15 @@ interface IGameHighlyRecommendedItemProps {
 
 
 const GameHighlyRecommendedItem: React.FC<IGameHighlyRecommendedItemProps> = ({ item }) => {
-    const lang = "en"
+    const { lang } = useLanguage()
     const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
     
     return (
         <div><div className="rounded-xl overflow-hidden">
             <div className="">
-                <div className="relative">
+                <div className="relative w-full pb-[56.25%]">
                     <a href="#"  >
-                        <img className="w-full" src={attributes.Avatar} />
+                        <img className="absolute w-full h-full top-0 left-0 object-cover" src={attributes.Avatar} />
                         <ItemOverlayCover />
                         <ItemRating className="absolute bottom-4 left-4" />
                     </a>

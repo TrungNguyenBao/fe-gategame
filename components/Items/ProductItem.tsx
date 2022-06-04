@@ -1,10 +1,11 @@
+import { useLanguage } from "../../lib/providers/language";
 import ProductItemType from "./ProductItemType";
 interface IProductItemProps {
     item?: any,
 }
 
 const ProductItem: React.FC<IProductItemProps> = ({ item }) => {
-    const lang = "en"
+    const { lang } = useLanguage()
     const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
 
     return (

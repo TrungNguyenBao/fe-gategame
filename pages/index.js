@@ -1,3 +1,4 @@
+import { HomePageContext } from 'lib/providers/homepage'
 import {
     getHomeSliders,
     getGameGenres,
@@ -15,12 +16,9 @@ import {
     getTheCommunityRecommendsItems,
     getTheCommunityReviewItems
 } from 'lib/services'
-import { createContext, useContext } from 'react'
 import HomePage from '../components/HomePage'
 import { DefaultLayout } from '../layouts/default-layout/default-layout'
 
-const HomePageContext = createContext({})
-export const useHomePageContext = () => useContext(HomePageContext)
 
 export default function Page({
     sliders,
@@ -65,7 +63,7 @@ Page.LayoutProps = {
     title: 'Gate Game',
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(ctx) {
     const [
         dataSliders,
         dataGameGenres,
@@ -137,6 +135,6 @@ export async function getStaticProps() {
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
         // - At most once every 10 seconds
-        revalidate: 10, // In seconds
+        revalidate: 1, // In seconds
     }
 }

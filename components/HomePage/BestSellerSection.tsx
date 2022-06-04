@@ -3,7 +3,7 @@ import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Title2 } from "../Common/Title";
 import ProductItem from "../../components/Items/ProductItem";
-import { useHomePageContext } from "../../pages";
+import { useHomePageContext } from "../../lib/providers/homepage";
 
 const BestSeller: React.FC = () => {
     const { bestSellersItems }: any = useHomePageContext()

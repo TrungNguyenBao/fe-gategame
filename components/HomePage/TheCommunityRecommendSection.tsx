@@ -1,4 +1,4 @@
-import { useHomePageContext } from "../../pages";
+import { useHomePageContext } from "../../lib/providers/homepage";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Title2 } from "../Common/Title";

@@ -3,13 +3,14 @@ import { Title6 } from "../../components/Common/Title";
 import ItemOverlayCover from "./ItemOverlayCover";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
+import { useLanguage } from "../../lib/providers/language";
 
 interface IGameRecomendationItemProps {
     item?: any
 }
 
 const GameRecomendationItem: React.FC<IGameRecomendationItemProps> = ({ item }) => {
-    const lang = "en"
+    const { lang } = useLanguage()
     const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
 
     return (

@@ -1,3 +1,4 @@
+import { useLanguage } from "../../lib/providers/language";
 import { Title6 } from "../../components/Common/Title";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
@@ -7,7 +8,7 @@ interface IGameItemHorizontalProps {
 }
 
 const GameItemHorizontal: React.FC<IGameItemHorizontalProps> = ({item}) => {
-    const lang = "en"
+    const { lang } = useLanguage()
     const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
     
     return (
