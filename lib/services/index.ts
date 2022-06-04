@@ -15,8 +15,30 @@ export const getGameGenres = async () => {
     return response.data;
 }
 
-export const getTopBlockchainGames = async () => {
-    const response = await axios.get<any>(getApiUrl('/api/home/top-blockchain-games?page=1&limit=1&BlockchainId&GenreId&PlatformId&playToEarn&is_nft&freeToPlay&Status&new='))
+export const getTopBlockchainGames = async ({
+    page = 1,
+    limit = 5,
+    BlockchainId = null,
+    GenreId = null,
+    PlatformId = null,
+    playToEarn = null,
+    is_nft = null,
+    freeToPlay = null,
+    Status = null,
+    isNew = null,
+}: any) => {
+    let url = `/api/home/top-blockchain-games?page=${page}&limit=${limit}`
+
+    url = BlockchainId ? `${url}&BlockchainId=${BlockchainId}` : url
+    url = GenreId ? `${url}&GenreId=${GenreId}` : url
+    url = PlatformId ? `${url}&PlatformId=${PlatformId}` : url
+    url = playToEarn ? `${url}&playToEarn=${playToEarn}` : url
+    url = is_nft ? `${url}&is_nft=${is_nft}` : url
+    url = freeToPlay ? `${url}&freeToPlay=${freeToPlay}` : url
+    url = Status ? `${url}&Status=${Status}` : url
+    url = isNew ? `${url}&isNew=${isNew}` : url
+
+    const response = await axios.get<any>(getApiUrl(url))
     return response.data;
 }
 
