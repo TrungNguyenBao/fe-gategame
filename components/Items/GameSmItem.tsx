@@ -44,13 +44,13 @@ const GameSmItem: React.FC<IGameSmItemProps> = ({ item }) => {
                         </div>
                         <ul className="flex justify-start gap-2 text-12 text-gray-500 font-semibold">
                             <li>
-                                <a className="flex gap-1" >2 <img className='w-[11px]' src="/images/icon/heart.svg" alt="Like" /></a>
+                                <a className="flex gap-1" >{item.LikeCount} <img className='w-[11px]' src="/images/icon/heart.svg" alt="Like" /></a>
                             </li>
                             <li>
-                                <a className="flex gap-1" href="#" >2 <img src="/images/icon/comment.svg" alt="Comment" /> </a>
+                                <a className="flex gap-1" href="#" >{item.ReviewCount} <img src="/images/icon/comment.svg" alt="Comment" /> </a>
                             </li>
                             <li>
-                                <a className="flex gap-1" href="#" >0 <img src="/images/icon/share.svg" alt="Share" /> </a>
+                                <a className="flex gap-1" href="#" >{item.ShareCount} <img src="/images/icon/share.svg" alt="Share" /> </a>
                             </li>
                         </ul>
                     </div>

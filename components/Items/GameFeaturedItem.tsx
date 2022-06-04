@@ -43,9 +43,9 @@ const GameItemFeatured: React.FC<IGameItemFeaturedProps> = ({ item }) => {
                             </div>
                         </div>
                         <ul className="flex gap-2 text-12 text-gray-500 font-semibold">
-                            <li><a href="#"  >1 Likes</a></li>
-                            <li><a href="#"  >2 Reviews</a></li>
-                            <li><a href="#"  >0 shares</a></li>
+                            <li><a href="#"  >{item.LikeCount} Likes</a></li>
+                            <li><a href="#"  >{item.ReviewCount} Reviews</a></li>
+                            <li><a href="#"  >{item.ShareCount} shares</a></li>
                         </ul>
                     </div>
                 </div>

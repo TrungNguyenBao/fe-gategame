@@ -13,7 +13,7 @@ interface IGameHighlyRecommendedItemProps {
 const GameHighlyRecommendedItem: React.FC<IGameHighlyRecommendedItemProps> = ({ item }) => {
     const { lang } = useLanguage()
     const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
-    
+
     return (
         <div><div className="rounded-xl overflow-hidden">
             <div className="">
@@ -37,9 +37,9 @@ const GameHighlyRecommendedItem: React.FC<IGameHighlyRecommendedItemProps> = ({ 
                                 </a>
                             </h3>
                             <ul className="flex gap-2 text-12 text-gray-500 font-semibold">
-                                <li><a href="#"  >2 Likes</a></li>
-                                <li><a href="#"  >2 Reviews</a></li>
-                                <li><a href="#"  >0 shares</a></li>
+                                <li><a href="#"  >{item.LikeCount} Likes</a></li>
+                                <li><a href="#"  >{item.ReviewCount} Reviews</a></li>
+                                <li><a href="#"  >{item.ShareCount} shares</a></li>
                             </ul>
                         </div>
                         <div className="">
