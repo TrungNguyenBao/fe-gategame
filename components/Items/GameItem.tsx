@@ -76,7 +76,7 @@ const GameItem: React.FC = () => {
                 </Button>
               </div>
               {isViewMore && (
-                <div className="">
+                <div className="mt-[10px]">
                   <Button
                     className="mr-[12px] border-[1px] border-solid border-[#6cb6f4] text-[#6cb6f4] px-[6px] py-[2px] hover:text-[#fff] hover:bg-[#6cb6f4] text-[12px] md:text-[14px] rounded-[2px] font-normal h-6"
                     href="#"
