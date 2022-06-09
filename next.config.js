@@ -24,5 +24,8 @@ module.exports = {
     locales: ['en', 'vi'],
     defaultLocale: 'en',
     localeDetection: false,
-  }
+  },
+  images: {
+    domains: ['cdn.dribbble.com', 'cdn.gategame.io'],
+  },
 }

@@ -7,6 +7,7 @@ import { FilterGame } from "../../components/Common/Filter";
 import DataTableTopGameProvider, { useDataTableTopGame } from "../../lib/providers/data-table-top-game-provider";
 import { useLanguage } from "../../lib/providers/language";
 import { slugGame } from "../../lib/helpers/slugGame";
+import ImageWithFallback from "../../components/Common/Image";
 
 const TopBlockchainGamesSection: React.FC = () => {
     return <section className='mb-16'>
@@ -20,13 +21,23 @@ const TopBlockchainGamesSection: React.FC = () => {
 
 const TopBlockchainGamesTable: React.FC = () => {
     const { loading, data, page, lastPage, total, setPage } = useDataTableTopGame()
+
     const { lang } = useLanguage()
 
     const GameNameFormat: React.FC = (data: any) => (
         <div className="flex items-start gap-2 p-3">
-            <div className="image">
+            <div className="">
                 <a href="#">
-                    <img className="w-[48px] h-[48px] object-cover rounded-xl" src={data?.Avatar} />
+                    <div className="relative w-[48px] h-[48px] rounded-xl overflow-hidden">
+                        <ImageWithFallback
+                            className="object-cover"
+                            layout="fill"
+                            src={data?.Avatar}
+                            fallbackSrc={'/images/gate_game/best-slide1.png'}
+                        />
+                    </div>
+
+                    {/* <img className="w-[48px] h-[48px] object-cover rounded-xl" src={data?.Avatar} /> */}
                 </a>
             </div>
             <div className="text-16 font-semibold">
@@ -37,11 +48,10 @@ const TopBlockchainGamesTable: React.FC = () => {
     )
 
     const formartedData = data.map((item: any) => {
-        const attributes = item?.Translations?.find((trans: any) => trans.Language === lang)
         return {
             Id: item.Id,
-            Name: attributes.Name,
-            Avatar: attributes.Avatar,
+            Name: item.fields.Name.Name,
+            Avatar: item.fields.Name.Image,
         }
     })
 
@@ -115,12 +125,12 @@ const TopBlockchainGamesTable: React.FC = () => {
                             },
                         ]}
                     />
-                    <DataTablePaging 
-                        lastPage={lastPage} 
-                        total={total} 
-                        currentPage={page} 
-                        from={(page - 1) * 5 + 1} 
-                        to={page * 5} 
+                    <DataTablePaging
+                        lastPage={lastPage}
+                        total={total}
+                        currentPage={page}
+                        from={(page - 1) * 5 + 1}
+                        to={page * 5}
                         setPage={setPage}
                     />
                 </div>

@@ -1,3 +1,4 @@
+import ImageWithFallback from "../../components/Common/Image";
 import { useLanguage } from "../../lib/providers/language";
 import ProductItemType from "./ProductItemType";
 interface IProductItemProps {
@@ -12,7 +13,18 @@ const ProductItem: React.FC<IProductItemProps> = ({ item }) => {
         <div className="flex flex-col">
             <div className="relative rounded-t-lg overflow-hidden w-full pb-[100%]">
                 <a href="#">
-                    <img className="absolute w-full h-full top-0 left-0 object-cover" src={attributes?.Avatar} />
+                    {/* <img className="absolute w-full h-full top-0 left-0 object-cover" src={attributes?.Avatar} /> */}
+
+                    <div className="absolute w-full h-full top-0 left-0 object-cover">
+                        <ImageWithFallback
+                            className="object-cover"
+                            layout="fill"
+                            src={attributes.Avatar}
+                            fallbackSrc={'/images/gate_game/hot-slide1.png'}
+                        />
+                    </div>
+                    
+                    /images/gate_game/hot-slide1.png
                     <ProductItemType type={"rare"} />
                 </a>
             </div>

@@ -10,6 +10,7 @@ import ItemRating from '../../components/Items/ItemRating';
 import ItemTags from '../../components/Items/ItemTags';
 import { slugGame } from '../../lib/helpers/slugGame';
 import { useHomePageContext } from '../../lib/providers/homepage';
+import ImageWithFallback from '../../components/Common/Image';
 
 
 const Header: React.FC = () => {
@@ -30,7 +31,16 @@ const Header: React.FC = () => {
               const game: any = item.Translations.find((trans: any) => trans.Language === lang)
               return (
                 <SwiperSlide key={game.Id}>
-                  <img className='relative w-full h-[564px] object-cover rounded-xl' src={game.Avatar} />
+                  {/* <img className='relative w-full h-[564px] object-cover rounded-xl' src={game.Avatar} /> */}
+                  <div className="relative w-full h-[564px] object-cover rounded-xl">
+                        <ImageWithFallback
+                            className="object-cover"
+                            layout="fill"
+                            src={game.Avatar}
+                            fallbackSrc={'/images/gate_game/slider1.png'}
+                        />
+                    </div>
+
                   <div className='absolute bottom-8 left-8' >
                     <ItemRating className='mb-4' />
                     <Title6 className='mb-4'>

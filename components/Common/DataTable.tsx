@@ -55,9 +55,6 @@ export const DataTablePaging: React.FC<IDataTablePagingProps> = () => {
         setPage,
     } = useDataTableTopGame()
 
-    console.log(range(1, lastPage + 1));
-
-
     return (
         <div className="flex justify-between p-6 text-12 font-semibold">
             <div className="">
