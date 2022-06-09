@@ -24,7 +24,6 @@ const ProductItem: React.FC<IProductItemProps> = ({ item }) => {
                         />
                     </div>
                     
-                    /images/gate_game/hot-slide1.png
                     <ProductItemType type={"rare"} />
                 </a>
             </div>
