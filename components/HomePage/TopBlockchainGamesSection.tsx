@@ -25,8 +25,6 @@ const TopBlockchainGamesTable: React.FC = () => {
     const { lang } = useLanguage()
 
     const formartedData = data.map((item: any) => {
-        console.log({ item });
-
         return {
             Id: item.Id,
             Name: item.fields.Name.Name,

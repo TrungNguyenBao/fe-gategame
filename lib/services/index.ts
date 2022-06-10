@@ -2,6 +2,14 @@ import axios from "axios";
 
 const API_URL = process.env.API_URL || "http://52.77.251.127"
 
+const cache: any = {}
+
+setInterval(() => {
+    for (let key in cache) {
+        delete cache[key]
+    }
+}, 10 * 60 * 1000)
+
 export const getApiUrl = (path: string, options?: { useProxy: boolean }) => {
     if (options?.useProxy) {
         return path
@@ -43,7 +51,11 @@ export const getTopBlockchainGames = async ({
     url = Status ? `${url}&Status=${Status}` : url
     url = isNew ? `${url}&isNew=${isNew}` : url
 
+    if (cache[url]) {
+        return cache[url]
+    }
     const response = await axios.get<any>(getApiUrl(url, { useProxy: true }))
+    cache[url] = response.data
     return response.data;
 }
 

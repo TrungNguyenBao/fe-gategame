@@ -29,7 +29,12 @@ const DataTableTopGameProvider: React.FC = ({ children }) => {
 
     const fetchData = async () => {
         setLoading(true)
-        const { Filters, Items } = await getTopBlockchainGames({ page, ...selectedFilter })
+        const { Error, Filters, Items } = await getTopBlockchainGames({ page, ...selectedFilter })
+
+        if (Error) {
+            setLoading(false)
+            return
+        }
 
         if (!filter) {
             setFilter(Filters)
