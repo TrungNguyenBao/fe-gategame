@@ -24,34 +24,23 @@ const TopBlockchainGamesTable: React.FC = () => {
 
     const { lang } = useLanguage()
 
-    const GameNameFormat: React.FC = (data: any) => (
-        <div className="flex items-start gap-2 p-3">
-            <div className="">
-                <a href="#">
-                    <div className="relative w-[48px] h-[48px] rounded-xl overflow-hidden">
-                        <ImageWithFallback
-                            className="object-cover"
-                            layout="fill"
-                            src={data?.Avatar}
-                            fallbackSrc={'/images/gate_game/best-slide1.png'}
-                        />
-                    </div>
-
-                    {/* <img className="w-[48px] h-[48px] object-cover rounded-xl" src={data?.Avatar} /> */}
-                </a>
-            </div>
-            <div className="text-16 font-semibold">
-                <a href={slugGame(data.Name, data.Id)}>{data.Name}</a>
-                <p className="d-none d-md-inline-block"></p>
-            </div>
-        </div>
-    )
-
     const formartedData = data.map((item: any) => {
+        console.log({ item });
+
         return {
             Id: item.Id,
             Name: item.fields.Name.Name,
             Avatar: item.fields.Name.Image,
+            Genre: item.fields.Genre,
+            Device: item.fields.Device,
+            Status: item.fields.Status,
+            Blockchain: item.fields.Blockchain,
+            NTF: item.fields.NTF,
+            F2P: item.fields.F2P,
+            P2E: item.fields.P2E,
+            P2E_SCORE: item.fields.P2E_SCORE,
+            SOCIAL_24: item.fields.SOCIAL_24,
+            SOCIAL_7: item.fields.SOCIAL_7,
         }
     })
 
@@ -65,13 +54,33 @@ const TopBlockchainGamesTable: React.FC = () => {
                     <DataTable
                         data={formartedData}
                         columns={[
-                            { name: 'Name', key: 'Name', format: GameNameFormat },
+                            {
+                                name: 'Name', key: 'Name', format: (data: any) => (
+                                    <div className="flex items-start gap-2 p-3">
+                                        <div className="">
+                                            <a href="#">
+                                                <div className="relative w-[48px] h-[48px] rounded-xl overflow-hidden">
+                                                    <ImageWithFallback
+                                                        className="object-cover"
+                                                        layout="fill"
+                                                        src={data?.Avatar}
+                                                        fallbackSrc={'/images/gate_game/best-slide1.png'}
+                                                    />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="text-16 font-semibold">
+                                            <a href={slugGame(data.Name, data.Id)}>{data.Name}</a>
+                                            <p className="d-none d-md-inline-block"></p>
+                                        </div>
+                                    </div>
+                                )
+                            },
                             {
                                 name: 'Genre',
                                 key: 'Genre',
-                                format: () => (<ul className="flex flex-col gap-0 leading-snug">
-                                    <li><p>Casual</p></li>
-                                    <li><p>City-Building</p></li>
+                                format: (data: any) => (<ul className="flex flex-col gap-0 leading-snug">
+                                    {data?.Genre?.length ? data?.Genre?.map((genreName: any) => <li><p>{genreName}</p></li>) : '-'}
                                 </ul>)
                             },
                             {
@@ -84,32 +93,44 @@ const TopBlockchainGamesTable: React.FC = () => {
                             },
                             {
                                 name: 'Device',
-                                format: () => <ul className="flex">
-                                    <li>
-                                        <a href="#"> <img src="/images/icon/ic_Web.svg" /></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <img src="/images/icon/ic_Android.svg" /></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <img src="/images/icon/ic_PS.svg" /></a>
-                                    </li>
+                                format: (data: any) => <ul className="flex">
+                                    {
+                                        data?.Device?.map((deviceImg: string) => <li className="relative block w-5 h-5">
+                                            <a href="#"> <ImageWithFallback layout="fill" src={deviceImg} /></a>
+                                        </li>)
+                                    }
                                 </ul>
                             },
                             {
-                                name: 'Status', format: () => <span className="inline-block w-full uppercase bg-gradient-to-r from-orange to-orange-dark font-semibold text-center rounded">
-                                    Beta
-                                </span>
+                                name: 'Status', format: (data: { Status: string }) => {
+                                    const getClassName = (status: string) => {
+                                        return {
+                                            beta: 'from-orange to-orange-dark',
+                                            development: 'from-blue-600 to-blue-400',
+                                            live: 'from-green-600 to-green-400',
+                                            alpha: 'from-black to-black'
+                                        }[status.toLowerCase()]
+                                    }
+                                    return <span className={`inline-block w-[90%] uppercase bg-gradient-to-r ${getClassName(data.Status)} font-semibold text-center rounded`}>
+                                        {data.Status}
+                                    </span>
+                                }
                             },
-                            { name: 'NFT', format: () => <div className="text-[#0a85ed] font-semibold p-2"><p>YES</p></div> },
-                            { name: 'F2P', format: () => <>Game Required</> },
-                            { name: 'P2E', format: () => <>NFT &amp; Crypto</> },
                             {
-                                name: 'P2E Score', format: () => <div className="flex items-center gap-3">
-                                    <div className="relative bg-gray-500 w-[48px] h-[11px] rounded-full overflow-hidden">
-                                        <div className="absolute w-[85%] h-full bg-blue-500" role="progressbar"></div>
+                                name: 'NFT', format: (data: any) => (
+                                    <div className="text-[#0a85ed] font-semibold p-2">
+                                        <p>{data.NTF === '1' ? "YES" : "NO"}</p>
                                     </div>
-                                    <p>8.5</p>
+                                )
+                            },
+                            { name: 'F2P', key: 'F2P' },
+                            { name: 'P2E', key: 'P2E' },
+                            {
+                                name: 'P2E Score', format: (data: {P2E_SCORE?: string | number}) => <div className="flex items-center gap-3">
+                                    <div className="relative bg-gray-500 w-[48px] h-[10px] rounded-full overflow-hidden">
+                                        <div className={`absolute h-full bg-blue-400`} style={{ width: Number(data.P2E_SCORE) * 10 + '%' }} role="progressbar"></div>
+                                    </div>
+                                    <p>{data.P2E_SCORE || 0}</p>
                                 </div>
                             },
                             {
