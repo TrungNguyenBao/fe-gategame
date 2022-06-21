@@ -8,12 +8,12 @@ import {
   useState,
 } from 'react'
 import { RiLoginBoxLine, RiSettings3Line, RiUser2Line } from 'react-icons/ri'
-import { BsLightningFill } from 'react-icons/bs'
+import { BsBag, BsLightningFill } from 'react-icons/bs'
 import { GiOrganigram } from 'react-icons/gi'
 
 import { Footer } from './footer'
 import { Button } from '../../../components/shared/form/button'
-import { VscAccount } from "react-icons/vsc";
+import { VscAccount } from 'react-icons/vsc'
 import {
   FaHome,
   FaAngleDown,
@@ -21,6 +21,7 @@ import {
   FaGamepad,
   FaUser,
   FaSignOutAlt,
+  FaMapMarkedAlt,
 } from 'react-icons/fa'
 import { Switch } from '@headlessui/react'
 import useScreen from '../../../lib/hooks/useScreen'
@@ -173,16 +174,16 @@ export default function Sidebar({ ...props }) {
               {!auth.me && (
                 <>
                   <Button
-                  onClick={() => handleClickMenuLogin()}
-                  className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
-                  style={{ paddingLeft: !mobile ? '15px' : '' }}
-                  icon={<RiLoginBoxLine />}
-                  iconClassName={'text-[20px] mr-2'}
-                  text={
-                    <div className="flex items-center font-semibold">
-                      <span>{'Sign In'}</span>
-                    </div>
-                  }
+                    onClick={() => handleClickMenuLogin()}
+                    className={`bg-white dark:bg-[#101111] w-full pl-6 py-7 justify-start font-normal rounded-none dark:hover:bg-black `}
+                    style={{ paddingLeft: !mobile ? '15px' : '' }}
+                    icon={<RiLoginBoxLine />}
+                    iconClassName={'text-[20px] mr-2'}
+                    text={
+                      <div className="flex items-center font-semibold">
+                        <span>{'Sign In'}</span>
+                      </div>
+                    }
                   ></Button>
                   <Button
                     onClick={() => handleClickMenuLogin()}
@@ -196,17 +197,28 @@ export default function Sidebar({ ...props }) {
                       </div>
                     }
                   ></Button>
+                
                 </>
               )}
-              
             </div>
           ))}
         </div>
         {auth.me && (
           <div className="relative group text-white w-full">
-            <a className="flex gap-2 items-center w-full" onClick={() => {}} id="user-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a
+              className="flex gap-2 items-center w-full"
+              onClick={() => {}}
+              id="user-dropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               <div className="w-[32px] pl-2">
-                <img src={auth.me.AvatarPath} className="-mt-4 rounded-full w-[32px] min-w-[32px]" />
+                <img
+                  src={auth.me.AvatarPath}
+                  className="-mt-4 rounded-full w-[32px] min-w-[32px]"
+                />
               </div>
               <div className="text-14 break-all leading-tight pb-4 pl-2 pr-2">
                 <div className="font-semibold mb-1">{auth.me.UserName}</div>
@@ -215,13 +227,23 @@ export default function Sidebar({ ...props }) {
                 </div>
               </div>
             </a>
-            <div className="hidden group-hover:flex gap-4 min-w-28 absolute bottom-0 bg-gray-700 left-[96%] flex-col p-4 px-6 whitespace-nowrap rounded-xl font-semibold" aria-labelledby="user-dropdown">
-              <a className="text-14 flex items-center gap-2 hover:text-blue-400" href="#">
-                <FaUser/>
+            <div
+              className="hidden group-hover:flex gap-4 min-w-28 absolute bottom-0 bg-gray-700 left-[96%] flex-col p-4 px-6 whitespace-nowrap rounded-xl font-semibold"
+              aria-labelledby="user-dropdown"
+            >
+              <a
+                className="text-14 flex items-center gap-2 hover:text-blue-400"
+                href="#"
+              >
+                <FaUser />
                 Profile
               </a>
-              <a onClick={auth.logout} className="text-14 flex items-center gap-2 hover:text-blue-400" href="#">
-                <FaSignOutAlt/>
+              <a
+                onClick={auth.logout}
+                className="text-14 flex items-center gap-2 hover:text-blue-400"
+                href="#"
+              >
+                <FaSignOutAlt />
                 Sign Out
               </a>
             </div>
@@ -271,6 +293,11 @@ export const SIDEBAR_MENUS = [
         title: 'Games',
         path: '/games',
         icon: <FaGamepad />,
+      },
+      {
+        title: 'Market',
+        path: '/market',
+        icon: <BsBag />,
       },
     ],
   },
