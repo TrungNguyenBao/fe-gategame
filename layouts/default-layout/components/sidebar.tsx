@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react'
 import { RiLoginBoxLine, RiSettings3Line, RiUser2Line } from 'react-icons/ri'
-import { BsBag, BsLightningFill } from 'react-icons/bs'
+import { BsAlignTop, BsBag, BsLightningFill } from 'react-icons/bs'
 import { GiOrganigram } from 'react-icons/gi'
 
 import { Footer } from './footer'
@@ -197,7 +197,6 @@ export default function Sidebar({ ...props }) {
                       </div>
                     }
                   ></Button>
-                
                 </>
               )}
             </div>
@@ -298,6 +297,11 @@ export const SIDEBAR_MENUS = [
         title: 'Market',
         path: '/market',
         icon: <BsBag />,
+      },
+      {
+        title: 'GG-SDK',
+        path: '/gg-sdk',
+        icon: <BsAlignTop />,
       },
     ],
   },

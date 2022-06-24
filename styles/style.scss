@@ -1,7 +1,8 @@
+@import './antd.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-// @import '~antd/dist/antd.css';
 @import 'react-toastify/dist/ReactToastify.css';
 
 @layer base {
@@ -20,7 +21,6 @@
     align-items: center;
     border-radius: 12px;
     transition: all 200ms ease;
-
   }
   .frosty:hover {
     transform: scale(1.05);

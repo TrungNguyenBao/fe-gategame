@@ -3,11 +3,11 @@ const path = require('path')
 const rewrites = () => {
   return [
     {
-      source: "/api/:path*",
+      source: '/api/:path*',
       destination: 'http://52.77.251.127/api/:path*',
     },
-  ];
-};
+  ]
+}
 
 module.exports = {
   rewrites,
@@ -26,6 +26,7 @@ module.exports = {
     localeDetection: false,
   },
   images: {
-    domains: ['cdn.dribbble.com', 'cdn.gategame.io'],
+    domains: ['cdn.dribbble.com', 'cdn.gategame.io', 'gategame.io'],
   },
+  experimental: { images: { layoutRaw: true } },
 }
