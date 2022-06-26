@@ -1,13 +1,13 @@
-import ImageWithFallback from 'components/Common/Image'
-import { Title2 } from 'components/Common/Title'
+import ImageWithFallback from '../../Common/Image'
+import { Title2 } from '../../Common/Title'
 
 function GlobalNFTDiagram() {
   return (
     <>
-      <div className="w-full py-28 bg-white text-gray-800">
-        <div className="flex container flex-wrap mx-auto items-center">
+      <div className="w-full md:py-28">
+        <div className="flex container flex-wrap mx-auto items-center flex-col-reverse md:flex-row">
           <div className="w-full md:w-1/3 p-5">
-            <Title2 classname="text-gray-800">Global NFT Diagram</Title2>
+            <Title2 className=" ">Global NFT Diagram</Title2>
             <div className="whitespace-pre-wrap mt-10">
               {`Pylon is our global NFT item. It can provide a variety of buffs for both in-game activities (like attack dmg and movement speed) and on-chain activities (like the ability to earn tokens). Unlike a normal NFT item, Pylon's buff can be applied across all Gategame games.
 
@@ -15,28 +15,28 @@ Game developers can also consider it as a demonstration of our Global NFT System
             </div>
           </div>
           <div className="w-full md:w-2/3 p-5">
-            <ImageWithFallback
-              className="object-contain"
-              width="100%"
-              height={50  }
-              layout="responsive"
-              src={'	https://gategame.io/images/gate_game/globalnft.png'}
-            />
+            <div className="relative w-full pb-3/4 md:pb-9/16">
+              <ImageWithFallback
+                className="object-contain"
+                layout="fill"
+                src={'https://gategame.io/images/gate_game/globalnft.png'}
+              />
+            </div>
           </div>
         </div>
 
         <div className="flex container flex-wrap mx-auto items-center">
           <div className="w-full md:w-2/3 p-5">
-            <ImageWithFallback
-              className="object-contain"
-              width="100%"
-              height={50  }
-              layout="responsive"
-              src={'https://gategame.io/images/gate_game/heroesorigin.png'}
-            />
+            <div className="relative w-full pb-3/4 md:pb-9/16">
+              <ImageWithFallback
+                className="object-contain"
+                layout="fill"
+                src={'https://gategame.io/images/gate_game/heroesorigin.png'}
+              />
+            </div>
           </div>
           <div className="w-full md:w-1/3 p-5">
-            <Title2 classname="text-gray-800">
+            <Title2 className="">
               Secure Deposit/ Withdrawal Process
             </Title2>
             <div className="whitespace-pre-wrap mt-10">

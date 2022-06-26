@@ -9,6 +9,7 @@ import Sidebar from './components/sidebar'
 import 'react-toastify/dist/ReactToastify.css'
 import LoginModal from '../../components/Login'
 import { useAuth } from '../../lib/providers/auth-provider'
+import SidebarV2 from './components/sidebarv2'
 
 declare global {
   interface Window {
@@ -29,7 +30,7 @@ export function DefaultLayout({ ...props }) {
   }, [auth.me])
 
   return (
-    <div className="w-full dark:bg-[#101111]">
+    <div className="w-full dark:bg-[#101111] flex flex-col h-[100vh]">
       <DefaultHead />
       <NextSeo defaultTitle={'Caash'} title={props.title ? props.title : ''} />
       <Header
@@ -38,9 +39,17 @@ export function DefaultLayout({ ...props }) {
         }}
         isOpenMenu={openMenu}
       />
-      <div className="flex pt-14 w-full relative min-h-screen">
-        {screen ? (
-          <Sidebar
+      <div className="flex w-full flex-grow overflow-y-auto">
+        <SidebarV2
+            openMenu={() => {
+              setOpenMenu(false)
+            }}
+            isOpenMenu={openMenu}
+            onCloseLogin={() => setOpenLogin(true)}
+            onCloseMenu={() => setOpenMenu(false)}
+          />
+        {/* {screen ? (
+          <SidebarV2
             openMenu={() => {
               setOpenMenu(false)
             }}
@@ -49,34 +58,40 @@ export function DefaultLayout({ ...props }) {
             onCloseMenu={() => setOpenMenu(false)}
           />
         ) : (
-          <Slideout
-            isOpen={openMenu}
-            onClose={() => setOpenMenu(false)}
-            placement="left"
-            maxWidth="193px"
-            style={{ marginTop: '72px' }}
-          >
-            <Sidebar
-              openMenu={() => {
-                setOpenMenu(true)
-              }}
-              isOpenMenu={openMenu}
-              onCloseLogin={() => setOpenLogin(true)}
-              onCloseMenu={() => setOpenMenu(false)}
-            />
-          </Slideout>
-        )}
+          <SidebarV2
+            openMenu={() => {
+              setOpenMenu(true)
+            }}
+            isOpenMenu={openMenu}
+            onCloseLogin={() => setOpenLogin(true)}
+            onCloseMenu={() => setOpenMenu(false)}
+          />
+          // <Slideout
+          //   isOpen={openMenu}
+          //   onClose={() => setOpenMenu(false)}
+          //   placement="left"
+          //   maxWidth="193px"
+          //   style={{ marginTop: '72px' }}
+          // >
+          //   <Sidebar
+          //     openMenu={() => {
+          //       setOpenMenu(true)
+          //     }}
+          //     isOpenMenu={openMenu}
+          //     onCloseLogin={() => setOpenLogin(true)}
+          //     onCloseMenu={() => setOpenMenu(false)}
+          //   />
+          // </Slideout>
+        )} */}
         <LoginModal
           isOpen={openLogin}
           logout={() => {}}
           onClose={() => setOpenLogin(false)}
         />
         <div
-          className={`flex-1 flex flex-col transition-all duration-300 dark:bg-[#101111] dark:text-white ${
-            !openMenu ? 'md:pl-48' : 'md:pl-14'
-          } `}
+          className={`flex-grow overflow-x-hidden transition-all duration-300 dark:bg-[#101111] dark:text-white`}
         >
-          <div className="px-32 py-10 xxs:px-[40px] xxs:py-[30px] min-h-screen bg-[#030303]">
+          <div className="py-10 xxs:py-[30px] min-h-screen bg-[#030303]">
             {props.children}
           </div>
           <Footer />

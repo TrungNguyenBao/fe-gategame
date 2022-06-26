@@ -1,8 +1,7 @@
 // TabSection.tsx
-import { Radio } from 'antd'
-import ImageWithFallback from 'components/Common/Image'
-import { Title2 } from 'components/Common/Title'
 import { useState } from 'react'
+import ImageWithFallback from '../../Common/Image'
+import { Title2 } from '../../Common/Title'
 export default function TabSection() {
   const [active, setActive] = useState(0)
   const data = [
@@ -31,28 +30,30 @@ export default function TabSection() {
     },
   ]
   return (
-    <div className="w-full rounded-2xl text-white my-16 pt-10">
-      <div className="flex w-full justify-center">
-        <div className="flex justify-center rounded-2xl overflow-hidden">
-          {/*  */}
-          {data.map((d, i) => {
-            return (
-              <div
-                className={`uppercase p-5 bg-[#212529] hover:bg-gray-200 hover:text-blue-600 cursor-pointer ${
-                  active != i ? '' : 'bg-gray-200 text-blue-600'
-                }`}
-                onClick={() => {
-                  setActive(i)
-                }}
-              >
-                {d.btn}
-              </div>
-            )
-          })}
-          {/*  */}
+    <div className="container container mx-auto md:pt-10 px-2">
+      <div className="w-full rounded-2xl text-white my-10 md:my-16 pt-10">
+        <div className="flex w-full justify-center">
+          <div className="flex justify-center rounded-2xl overflow-hidden">
+            {/*  */}
+            {data.map((d, i) => {
+              return (
+                <div
+                  className={`uppercase p-2 text-12 sm:text-16 whitespace-nowrap sm:p-5 bg-[#212529] hover:bg-gray-200 hover:text-blue-600 cursor-pointer ${
+                    active != i ? '' : 'bg-gray-200 text-blue-600'
+                  }`}
+                  onClick={() => {
+                    setActive(i)
+                  }}
+                >
+                  {d.btn}
+                </div>
+              )
+            })}
+            {/*  */}
+          </div>
         </div>
+        {data.map((d, i) => (i !== active ? <></> : <TabView {...d} />))}
       </div>
-      {data.map((d, i) => (i !== active ? <></> : <TabView {...d} />))}
     </div>
   )
 }
@@ -74,9 +75,9 @@ function TabView(props: {
           src={props.thumb}
         />
       </div>
-      <div className="relative min-h-[300px] w-full md:w-1/2 p-16">
+      <div className="relative min-h-[300px] w-full md:w-1/2 md:p-16">
         <Title2>{props.title}</Title2>
-        <p className="mt-16 whitespace-pre-wrap text-gray-600">
+        <p className="mt-8 md:mt-16 whitespace-pre-wrap text-gray-600">
           {props.content}
         </p>
       </div>

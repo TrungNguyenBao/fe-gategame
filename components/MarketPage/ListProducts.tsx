@@ -1,8 +1,8 @@
 import Select from 'react-select'
 import { marketData } from './data'
-import ProductItem from 'components/Items/ProductItem'
 import React from 'react'
-import Slider from 'components/Common/Slider'
+import Slider from '../Common/Slider'
+import ProductItem from '../Items/ProductItem'
 const ListProducts: React.FC = () => {
   const products: Array<any> = marketData.products
   return (

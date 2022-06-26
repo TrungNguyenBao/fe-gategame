@@ -1,7 +1,3 @@
-import { ButtonLinkPrimary } from 'components/Common/Button'
-import ImageWithFallback from 'components/Common/Image'
-import { Title2 } from 'components/Common/Title'
-import { Radio } from 'antd'
 import MapSection from './Section/MapSection'
 import GettingStartedSection from './Section/GettingStartedSection'
 import TabSection from './Section/TabSection'
@@ -15,13 +11,9 @@ import TellUs from './Section/TellUs'
 const GgSdkPage = () => {
   return (
     <>
-      <div className="container container mx-auto pt-10">
-        <MapSection />
-
-        <GettingStartedSection />
-
-        <TabSection />
-      </div>
+      <MapSection />
+      <GettingStartedSection />
+      <TabSection />
       <MergingSplitingSection />
       <Achievement />
       <MultiTokenIntegration />

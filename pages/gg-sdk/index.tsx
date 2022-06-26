@@ -1,5 +1,5 @@
-import GgSdkPage from 'components/GgSdkPage'
-import { DefaultLayout } from 'layouts/default-layout/default-layout'
+import GgSdkPage from "../../components/GgSdkPage"
+import { DefaultLayout } from "../../layouts/default-layout/default-layout"
 
 export default function GgSdk() {
   return <GgSdkPage />

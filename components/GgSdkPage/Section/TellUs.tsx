@@ -1,15 +1,13 @@
-import ImageWithFallback from 'components/Common/Image'
-import { Title2 } from 'components/Common/Title'
+import ImageWithFallback from '../../Common/Image'
+import { Title2 } from '../../Common/Title'
 
 function TellUs() {
   return (
     <>
-      <div className="w-full py-28 ">
+      <div className="w-full py-8 md:py-28 bg-[#202020]">
         <div className="flex container flex-wrap mx-auto items-center">
-          <div className="w-full md:w-7/12 p-8">
-            <Title2 classname="text-gray-800">
-              Tell us about your project
-            </Title2>
+          <div className="w-full md:w-7/12 p-5 md:p-8">
+            <Title2 className="">Tell us about your project</Title2>
             <div className="whitespace-pre-wrap mt-10">
               {`Through the API system, GateGame allows users and game makers to sell a variety of their in-game items: avatars, items, skins... and accounts. All with the support of The Calculator pricing system.`}
             </div>
@@ -23,14 +21,14 @@ function TellUs() {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-5/12 p-8">
-            <ImageWithFallback
-              className="object-contain"
-              width="100%"
-              height={'100%'}
-              layout="responsive"
-              src={'	https://gategame.io/images/gate_game/project.png'}
-            />
+          <div className="w-full md:w-5/12 p-5 md:p-8">
+            <div className="relative pb-1/1">
+              <ImageWithFallback
+                className="object-contain"
+                layout="fill"
+                src={'	https://gategame.io/images/gate_game/project.png'}
+              />
+            </div>
           </div>
         </div>
       </div>
