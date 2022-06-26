@@ -290,6 +290,19 @@ module.exports = {
         'slide-in-right': 'slideInRight .2s ease-in',
         'slide-out-right': 'slideOutRight .2s ease-out forwards',
       },
+      padding: ['1/1', '16/9', '9/16', '4/3', '1/2', '3/4', '2/1'].reduce(
+        (data, item) => {
+          const d = item.split('/')
+          data[item] = `${(d[0] / d[1]) * 100}%`
+          return data
+        },
+        {}
+      ),
+      // {
+      //   '16/9': `${(16 / 9) * 100}%`,
+      //   '4/3': `${(4 / 3) * 100}%`,
+      //   '1/2': `${(1 / 2) * 100}%`,
+      // },
     },
   },
   variants: {

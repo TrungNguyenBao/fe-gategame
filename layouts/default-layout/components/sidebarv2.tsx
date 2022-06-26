@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router'
+import type { MenuProps } from 'antd'
+import { Menu } from 'antd'
 import {
   Children,
   Fragment,
@@ -31,7 +33,7 @@ import { BiLogIn } from 'react-icons/bi'
 import { useAuth } from '../../../lib/providers/auth-provider'
 
 interface PropsType extends ReactProps {}
-export default function Sidebar({ ...props }) {
+export default function SidebarV2({ ...props }) {
   const [theme, setTheme] = useState(null)
   const [currentIndexMenu, setCurrentIndexMenu] = useState(0)
   const auth = useAuth()
@@ -91,15 +93,34 @@ export default function Sidebar({ ...props }) {
     setMenus([...menus])
   }, [])
 
+  // return (
+  //   <div className="sticky top-0 left-0 flex-none">
+  //     <Menu
+  //       className="h-full bg-white dark:bg-[#101111] bg-opacity-80 shadow  border-r dark:border-[#292929] transition-all duration-300"
+  //       defaultSelectedKeys={['1']}
+  //       selectedKeys={[router.asPath]}
+  //       onSelect={(e) => {
+  //         if (e.key.startsWith('/')) {
+  //           router.push(e.key)
+  //         }
+  //       }}
+  //       mode="inline"
+  //       theme="dark"
+  //       inlineCollapsed={isOpenMenu}
+  //       items={items}
+  //     />
+  //   </div>
+  // )
+
   return (
-    <>
+    <div className={`fixed top-[72px]  md:sticky md:top-0 flex-none bg-white dark:bg-[#101111] bg-opacity-80 shadow dark:border-[#292929]  border-r  transition-all duration-300 z-10 ${isOpenMenu?"left-0":"right-full"}`}>
       <div
-        className={`bg-white dark:bg-[#101111] bg-opacity-80 shadow md:fixed top-[72px] flex flex-col border-r dark:border-[#292929]
-          ${mobile ? 'w-48' : 'w-14'} transition-all duration-300
+        className={`flex flex-col
+          ${mobile ? 'w-48' : 'w-14'}
         `}
         style={{ height: 'calc(100vh - 72px)' }}
       >
-        <div className="flex-1 pb-3 overflow-auto scrollbar-custom">
+        <div className="flex-1 pb-3 overflow-y-auto overflow-x-hidden scrollbar-custom">
           {menus?.map((menu, index) => (
             <div className="mb-2" key={index}>
               {menu?.submenus.map((submenu: any, index: any) => {
@@ -249,7 +270,7 @@ export default function Sidebar({ ...props }) {
           </div>
         )}
       </div>
-    </>
+    </div>
   )
 }
 
@@ -306,3 +327,43 @@ export const SIDEBAR_MENUS = [
     ],
   },
 ]
+
+const TitleMenu = (props: { text: string; className?: string }) => (
+  <div className={props.className || 'ml-5 pr-10'}>{props.text}</div>
+)
+type MenuItem = Required<MenuProps>['items'][number]
+const items: MenuItem[] = [
+  {
+    key: '/',
+    label: <TitleMenu text="Home" />,
+    icon: <FaHome size={22} />,
+  },
+  {
+    key: '/games',
+    label: <TitleMenu text="Games" />,
+    icon: <FaGamepad size={22} />,
+  },
+  {
+    key: '/market',
+    label: <TitleMenu text="Market" />,
+    icon: <BsBag size={22} />,
+  },
+  {
+    key: '/gg-sdk',
+    label: <TitleMenu text="GG-SDK" />,
+    icon: <BsAlignTop size={22} />,
+  },
+  {
+    key: 'sigin',
+    label: <TitleMenu text="Sigin" />,
+    icon: <RiLoginBoxLine size={22} />,
+  },
+  {
+    key: 'register',
+    label: <TitleMenu text="Register" />,
+    icon: <VscAccount size={22} />,
+  },
+]?.map((item: MenuItem) => {
+  item.className = 'mb-5'
+  return item
+})

@@ -34,7 +34,7 @@ export function Header({ ...props }) {
 
   return (
     <>
-      <div className="fixed backdrop-blur-lg top-0 z-10 border-b dark:border-[#292929] bg-opacity-100 w-full h-18 dark:bg-[#101111] bg-white px-2 md:px-[15px] flex items-center justify-between shadow">
+      <div className="sticky flex-none backdrop-blur-lg top-0 z-10 border-b dark:border-[#292929] bg-opacity-100 w-full h-18 dark:bg-[#101111] bg-white px-2 md:px-[15px] flex items-center justify-between shadow">
         <div className="flex items-center justify-start">
           <i
             className={`text-[24px] cursor-pointer text-gray-700 dark:text-white transition-all duration-300 transform ${props.isOpenMenu ? 'rotate-90' : 'rotate-0'
@@ -56,7 +56,7 @@ export function Header({ ...props }) {
         </div>
         <div className="flex">
           <form action="https://gategame.io/search.html" id="form-search">
-            <div className="flex items-center gap-4 p-2 px-4 bg-grayBg rounded focus:border-2 focus:border-blue-500">
+            <div className="items-center gap-4 p-2 px-4 bg-grayBg rounded focus:border-2 focus:border-blue-500 hidden sm:flex">
               <img src='/images/icon/search.png' className='w-4 h-4 cursor-pointer opacity-80 transition-opacity hover:opacity-100'/>
               <input type="text" className="w-96 h-auto bg-transparent text-white" name="q" placeholder="Search games..." />
               <a href="#"><i className="far fa-search"></i></a>
