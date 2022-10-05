@@ -2,6 +2,7 @@ import { useLanguage } from "../../lib/providers/language";
 import { Title6 } from "../../components/Common/Title";
 import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
+import ImageWithFallback from "../../components/Common/Image";
 
 interface IGameItemHorizontalProps {
     item?: any
@@ -18,7 +19,13 @@ const GameItemHorizontal: React.FC<IGameItemHorizontalProps> = ({item}) => {
                     <div className="">
                         <div className="">
                             <a href="https://gategame.io/stellaverse-frontier-p11163.html">
-                                <img className="w-[120px] h-[75px] object-cover rounded-xl" src={attributes.Avatar} alt="" />
+                                <div className="relative w-[120px] h-[75px] object-cover rounded-xl">
+                                    <ImageWithFallback
+                                        className="object-cover"
+                                        layout="fill"
+                                        src={attributes.Avatar}
+                                    />
+                                </div>
                             </a>
                         </div>
                     </div>

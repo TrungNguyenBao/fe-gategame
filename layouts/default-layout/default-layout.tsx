@@ -88,9 +88,7 @@ export function DefaultLayout({ ...props }) {
           logout={() => {}}
           onClose={() => setOpenLogin(false)}
         />
-        <div
-          className={`flex-grow overflow-x-hidden transition-all duration-300 dark:bg-[#101111] dark:text-white`}
-        >
+        <div className={`flex-grow overflow-x-hidden transition-all duration-300 dark:bg-[#101111] dark:text-white`}>
           <div className="py-10 xxs:py-[30px] min-h-screen bg-[#030303]">
             {props.children}
           </div>

@@ -1,4 +1,5 @@
 
+import ImageWithFallback from '../../components/Common/Image'
 import { slugGame } from '../../lib/helpers/slugGame';
 import { useLanguage } from '../../lib/providers/language';
 import { Title6 } from "../Common/Title";
@@ -7,7 +8,7 @@ import ItemRating from "./ItemRating";
 import ItemTags from "./ItemTags";
 
 interface IGameMdItemProps {
-    item?: any
+  item?: any
 }
 
 const GameMdItem: React.FC<IGameMdItemProps> = ({ item }) => {
@@ -20,7 +21,13 @@ const GameMdItem: React.FC<IGameMdItemProps> = ({ item }) => {
                 <div className="recent-box">
                     <div className="relative">
                         <a href="#" >
-                            <img className="h-[380px] object-cover" src={attributes.Avatar} />
+                            <div className="relative h-[380px] object-cover">
+                                    <ImageWithFallback
+                                        className="object-cover"
+                                        layout="fill"
+                                        src={attributes.Avatar}
+                                    />
+                                </div>
                             <ItemOverlayCover />
                             <ItemRating className="absolute bottom-4 left-4" />
                         </a>

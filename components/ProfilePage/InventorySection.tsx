@@ -3,22 +3,20 @@ import { ButtonPrimary } from '../Common/Button'
 
 const InventorySection: React.FC = () => {
   return (
-    <div className="flex flex-col bg-[#121212] mb-[60px] rounded-[8px] mt-[60px]">
-      <div className="flex items-center justify-between px-[30px] py-[16px]">
-        <div className="text-[16px] leading-[26px] font-semibold">
-          Inventory
-        </div>
-      </div>
-      <div className="flex flex-col items-center justify-center border-t-[1px] border-solid border-[#202020] pt-[32px] pb-[58px]">
-        <img src="/images/icon/nft-now.svg" alt="" />
-        <span className="my-[20px] text-[16px] leading-[26px] font-normal">
-          You haven’t own any NFTs yet
-        </span>
-        <ButtonPrimary className="bg-[#006dff] hover:bg-[#0a85ed] text-[14px] leading-[24px] px-[40px] py-[11px]">
+    <section className="bg-[#121212] rounded-lg xxs:mb-8 lg:mb-14">
+      <header className='p-5 border-b-[1px] border-[#202020]'>
+        <h2 className='text-18 font-semibold leading-tight'>Inventory</h2>
+      </header>
+      <div className="p-5 text-center">
+        <figure className='mb-4 text-center'>
+          <img className='inline-block' src="/images/icon/nft-now.svg" alt="title" />
+        </figure>
+        <p className="mb-4">You haven’t own any NFTs yet</p>
+        <ButtonPrimary className="bg-[#006dff] hover:bg-[#0a85ed] text-14 leading-[40px] px-5">
           Explore and Buy NFTs now
         </ButtonPrimary>
       </div>
-    </div>
+    </section>
   )
 }
 

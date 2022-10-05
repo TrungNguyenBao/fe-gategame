@@ -64,14 +64,28 @@ module.exports = {
         },
         grayBg: '#222',
         grayLine: '#343a40',
+        blue:'#0A85ED',
+        ocean:'#00B2CA',
+        green:'#20BF55',
+        yellow:'#FFD500',
+        orange:'#FF9100',
+        violet:'#9D4EDD',
+        121212:'#121212',
       },
       fontFamily: {
         // body: ['Open Sans', 'sans-serif'],
         body: ['hk_grotesk', 'sans-serif'],
       },
+      backgroundColor:{
+        violet:'#9D4EDD',
+      },
       backgroundImage: {
         customGradientBlackXs:
           'linear-gradient(90deg,rgba(3,3,3,.5),rgba(0,0,0,0))',
+        linear2D8:
+          'linear-gradient(90deg, rgba(17,66,216,1) 0%, rgba(10,164,243,1) 100%)',
+        linear626:
+          'linear-gradient(90deg, rgba(17,22,38,1) 0%, rgba(18,26,40,1) 50%, rgba(17,32,40,1) 100%)',
       },
       // boxShadow: (theme) => {
       //   const colors = {
@@ -92,9 +106,11 @@ module.exports = {
         16: '16px',
         18: '18px',
         20: '20px',
+        22: '22px',
         24: '24px',
         28: '28px',
         32: '32px',
+        36: '36px',
         40: '40px',
         48: '48px',
         64: '64px',

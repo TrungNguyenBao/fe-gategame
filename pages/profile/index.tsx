@@ -3,7 +3,12 @@ import { DefaultLayout } from '../../layouts/default-layout/default-layout'
 import ProfilePage from '../../components/ProfilePage'
 
 const Profile = () => {
-  return <ProfilePage />
+  return (
+    <div className='lg:px-[30px] xxs:px-[15px]'>
+      <ProfilePage />
+    </div>
+  )
+ 
 }
 
 Profile.Layout = DefaultLayout

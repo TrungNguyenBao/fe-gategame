@@ -228,3 +228,45 @@ html {
     @apply text-gray-600 dark:text-gray-200;
   }
 }
+/*  Hieudv-begin-CSS --------------------------------------------------------------------------*/
+/*  responsive-table --------------------------------------------------------------------------*/
+@media screen and (max-width: 1024px){
+  .table-dict thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .table-dict tr{
+    border-bottom:4px solid #343a40 !important;
+    display: block;
+  }
+  .table-dict td {
+    border-bottom: 1px solid #343a40;
+    display: block;
+  }
+  .table-dict td::before {
+    content: attr(data-label);
+    margin-right:10px;
+    color:rgba(255, 255, 255, 0.68);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:11px;
+    width: 100%;
+    text-align: left;
+  }
+  .table-dict td:last-child {border-bottom: 0;}
+  .table-dict tr:last-child {margin-bottom: 0;}
+  }
+  /*  responsive-table --------------------------------------------------------------------------*/
+  .editor-content p, .editor-content figure, .editor-content ul, .editor-content div, .editor-content table{
+    @apply mb-5
+  }
+  .editor-content figure {@apply text-center}
+  .editor-content a {@apply text-blue}
+  .editor-content img {@apply inline-block}
+  /*  end-Hieudv-begin-CSS --------------------------------------------------------------------------*/

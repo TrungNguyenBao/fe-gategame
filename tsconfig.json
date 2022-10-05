@@ -12,7 +12,9 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["node_modules/*"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

@@ -16,7 +16,7 @@ export const ButtonPrimary: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`inaline-block w-auto bg-[#0a85ed] hover:bg-black transition-all py-3 px-10 rounded-md font-semibold ${className}`}
+      className={`inline-block bg-[#0a85ed] leading-[38px] transition-all px-4 rounded font-semibold ${className}`}
       {...props}
     >
       {children}

@@ -10,13 +10,11 @@ const BackButton: React.FC<BackButtonProps> = ({
 }: BackButtonProps) => {
   const router = useRouter()
   return (
-    <button
-      className={`flex items-center text-[#ffffff78] text-[14px] leading-[24px] mb-[20px]  ${className}`}
-      onClick={() => router.back()}
-    >
-      <FaChevronLeft className="mr-[5px]" />
-      Back
-    </button>
+    <div className='mb-5'>
+      <button className={`text-14 font-semibold inline-block opacity-[0.68] hover:opacity-100 duration-200  ${className}`} onClick={() => router.back()}>
+        <FaChevronLeft className="inline-block mr-2"/>Back
+      </button>
+    </div>
   )
 }
 
