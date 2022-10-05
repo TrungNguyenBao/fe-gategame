@@ -60,7 +60,7 @@ const FollowGameSection: React.FC = () => {
                     </a>
                 </figure>
                 <h3 className='font-semibold leading-snug mt-3 xxs:text-14 md:text-16'>
-                  <a className='group-hover:text-blue duration-200 block' href='#' title='title'>Epic Heroes</a>
+                  <a className='group-hover:text-blueCustom duration-200 block' href='#' title='title'>Epic Heroes</a>
                 </h3>
                 <div className='flex flex-wrap items-center mt-1'>
                   <figure className='mr-1'>
@@ -78,7 +78,7 @@ const FollowGameSection: React.FC = () => {
                     </a>
                 </figure>
                 <h3 className='font-semibold leading-snug mt-3 xxs:text-14 md:text-16'>
-                  <a className='group-hover:text-blue duration-200 block' href='#' title='title'>Epic Heroes</a>
+                  <a className='group-hover:text-blueCustom duration-200 block' href='#' title='title'>Epic Heroes</a>
                 </h3>
                 <div className='flex flex-wrap items-center mt-1'>
                   <figure className='mr-1'>
@@ -96,7 +96,7 @@ const FollowGameSection: React.FC = () => {
                     </a>
                 </figure>
                 <h3 className='font-semibold leading-snug mt-3 xxs:text-14 md:text-16'>
-                  <a className='group-hover:text-blue duration-200 block' href='#' title='title'>Epic Heroes</a>
+                  <a className='group-hover:text-blueCustom duration-200 block' href='#' title='title'>Epic Heroes</a>
                 </h3>
                 <div className='flex flex-wrap items-center mt-1'>
                   <figure className='mr-1'>
@@ -114,7 +114,7 @@ const FollowGameSection: React.FC = () => {
                     </a>
                 </figure>
                 <h3 className='font-semibold leading-snug mt-3 xxs:text-14 md:text-16'>
-                  <a className='group-hover:text-blue duration-200 block' href='#' title='title'>Epic Heroes</a>
+                  <a className='group-hover:text-blueCustom duration-200 block' href='#' title='title'>Epic Heroes</a>
                 </h3>
                 <div className='flex flex-wrap items-center mt-1'>
                   <figure className='mr-1'>
@@ -132,7 +132,7 @@ const FollowGameSection: React.FC = () => {
                     </a>
                 </figure>
                 <h3 className='font-semibold leading-snug mt-3 xxs:text-14 md:text-16'>
-                  <a className='group-hover:text-blue duration-200 block' href='#' title='title'>Epic Heroes</a>
+                  <a className='group-hover:text-blueCustom duration-200 block' href='#' title='title'>Epic Heroes</a>
                 </h3>
                 <div className='flex flex-wrap items-center mt-1'>
                   <figure className='mr-1'>
@@ -150,7 +150,7 @@ const FollowGameSection: React.FC = () => {
                     </a>
                 </figure>
                 <h3 className='font-semibold leading-snug mt-3 xxs:text-14 md:text-16'>
-                  <a className='group-hover:text-blue duration-200 block' href='#' title='title'>Epic Heroes</a>
+                  <a className='group-hover:text-blueCustom duration-200 block' href='#' title='title'>Epic Heroes</a>
                 </h3>
                 <div className='flex flex-wrap items-center mt-1'>
                   <figure className='mr-1'>
@@ -163,7 +163,7 @@ const FollowGameSection: React.FC = () => {
               </article>
             </div>
             <div className='border-t-[1px] border-[#202020] pt-5 mt-5 text-center'>
-              <a className='font-semibold text-blue inline-block leading-7 px-4' href='#' title='title'>View All</a>
+              <a className='font-semibold text-blueCustom inline-block leading-7 px-4' href='#' title='title'>View All</a>
             </div>
           </div>
         )}

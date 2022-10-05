@@ -13,7 +13,7 @@ const NFTdetail = () => {
 
         <div className='xxs:w-full lg:w-8/12 lg:pl-8 xxs:pl-0 mb-7'>
           <div className='mb-2 inline-block'>
-            <span className='flex bg-violet py-1 px-2 font-semibold rounded items-center'>
+            <span className='flex bg-violetCustom py-1 px-2 font-semibold rounded items-center'>
               <BsFillSuitDiamondFill className='inline-block mr-1'/>Mythic
             </span>
           </div>
@@ -37,21 +37,21 @@ const NFTdetail = () => {
             </div>
           </div>
           <div className='xxs:mt-5 lg:mt-10 flex flex-wrap items-center'>
-            <button className='xxs:w-full lg:w-6/12 font-semibold text-18  bg-blue rounded leading-[52px] mb-5'>Buy Now</button>
+            <button className='xxs:w-full lg:w-6/12 font-semibold text-18  bg-blueCustom rounded leading-[52px] mb-5'>Buy Now</button>
             <ul className='xxs:w-full lg:w-6/12 lg:pl-2 xxs:pl-0 flex mb-5 justify-center'>
               <li className='pr-3 pl-3 group text-center'>
-                <a className="w-[52px] h-[52px] rounded-full group-hover:border-blue inline-block border border-white leading-[52px] duration-200" href='#' title='title'>
-                  <AiOutlineHeart className='inline-block text-24 group-hover:text-blue duration-200'/>
+                <a className="w-[52px] h-[52px] rounded-full group-hover:border-blueCustom inline-block border border-white leading-[52px] duration-200" href='#' title='title'>
+                  <AiOutlineHeart className='inline-block text-24 group-hover:text-blueCustom duration-200'/>
                 </a>
               </li>
               <li className='pr-3 pl-3 group text-center'>
-                <a className="w-[52px] h-[52px] rounded-full group-hover:border-blue inline-block border border-white leading-[52px] duration-200" href='#' title='title'>
-                  <AiOutlineShareAlt className='inline-block text-24 group-hover:text-blue duration-200'/>
+                <a className="w-[52px] h-[52px] rounded-full group-hover:border-blueCustom inline-block border border-white leading-[52px] duration-200" href='#' title='title'>
+                  <AiOutlineShareAlt className='inline-block text-24 group-hover:text-blueCustom duration-200'/>
                 </a>
               </li>
               <li className='pr-3 pl-3 group text-center'>
-                <a className="w-[52px] h-[52px] rounded-full group-hover:border-blue inline-block border border-white leading-[52px] duration-200" href='#' title='title'>
-                  <AiOutlineFlag className='inline-block text-24 group-hover:text-blue duration-200'/>
+                <a className="w-[52px] h-[52px] rounded-full group-hover:border-blueCustom inline-block border border-white leading-[52px] duration-200" href='#' title='title'>
+                  <AiOutlineFlag className='inline-block text-24 group-hover:text-blueCustom duration-200'/>
                 </a>
               </li>
             </ul>
@@ -66,42 +66,42 @@ const NFTdetail = () => {
         <div className='flex flex-wrap'>
             <article className='xxs:w-full xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 xxs:p-4 xl:p-5'>
               <div className='bg-[#030303] p-5 rounded-lg border border-[#343a40]'>
-                <h3 className='text-22 font-semibold text-blue uppercase mb-2'>GOD</h3>
+                <h3 className='text-22 font-semibold text-blueCustom uppercase mb-2'>GOD</h3>
                 <label className='block text-16 mb-2 font-semibold'>Death</label>
                 <p className=' opacity-[0.68] mb-2 last:mb-0'>10% have this trait</p>
               </div>
             </article>
             <article className='xxs:w-full xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 xxs:p-4 xl:p-5'>
               <div className='bg-[#030303] p-5 rounded-lg border border-[#343a40]'>
-                <h3 className='text-22 font-semibold text-blue uppercase mb-2'>Name</h3>
+                <h3 className='text-22 font-semibold text-blueCustom uppercase mb-2'>Name</h3>
                 <label className='block  text-16 mb-2 font-semibold'>Death</label>
                 <p className=' opacity-[0.68] mb-2 last:mb-0'>10% have this trait</p>
               </div>
             </article>
             <article className='xxs:w-full xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 xxs:p-4 xl:p-5'>
               <div className='bg-[#030303] p-5 rounded-lg border border-[#343a40]'>
-                <h3 className='text-22 font-semibold text-blue uppercase mb-2'>QUALITY</h3>
+                <h3 className='text-22 font-semibold text-blueCustom uppercase mb-2'>QUALITY</h3>
                 <label className='block  text-16 mb-2 font-semibold'>Death</label>
                 <p className=' opacity-[0.68] mb-2 last:mb-0'>10% have this trait</p>
               </div>
             </article>
             <article className='xxs:w-full xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 xxs:p-4 xl:p-5'>
               <div className='bg-[#030303] p-5 rounded-lg border border-[#343a40]'>
-                <h3 className='text-22 font-semibold text-blue uppercase mb-2'>RARITY</h3>
+                <h3 className='text-22 font-semibold text-blueCustom uppercase mb-2'>RARITY</h3>
                 <label className='block  text-16 mb-2 font-semibold'>Death</label>
                 <p className='opacity-[0.68] mb-2 last:mb-0'>10% have this trait</p>
               </div>
             </article>
             <article className='xxs:w-full xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 xxs:p-4 xl:p-5'>
               <div className='bg-[#030303] p-5 rounded-lg border border-[#343a40]'>
-                <h3 className='text-22 font-semibold text-blue uppercase mb-2'>set</h3>
+                <h3 className='text-22 font-semibold text-blueCustom uppercase mb-2'>set</h3>
                 <label className='block text-16 mb-2 font-semibold'>Death</label>
                 <p className='opacity-[0.68] mb-2 last:mb-0'>10% have this trait</p>
               </div>
             </article>
             <article className='xxs:w-full xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 xxs:p-4 xl:p-5'>
               <div className='bg-[#030303] p-5 rounded-lg border border-[#343a40]'>
-                <h3 className='text-22 font-semibold text-blue uppercase mb-2'>TYPE</h3>
+                <h3 className='text-22 font-semibold text-blueCustom uppercase mb-2'>TYPE</h3>
                 <label className='block text-16 mb-2 font-semibold'>Death</label>
                 <p className='opacity-[0.68] mb-2 last:mb-0'>10% have this trait</p>
               </div>
@@ -135,9 +135,9 @@ const NFTdetail = () => {
                 <span className='opacity-[0.47] text-14'>Binance</span>
               </div>
               <ul className='text-14 mr-5 mb-3'>
-                <li className='px-1 inline-block'><a className='text-blue border inline-block border-blue py-0.5 px-2' href='#' title='title'>free2play</a></li>
-                <li className='px-1 inline-block'><a className='text-blue border inline-block border-blue py-0.5 px-2' href='#' title='title'>play2earn</a></li>
-                <li className='px-1 inline-block'><a className='text-blue border inline-block border-blue py-0.5 px-2' href='#' title='title'>win2earn</a></li>
+                <li className='px-1 inline-block'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2' href='#' title='title'>free2play</a></li>
+                <li className='px-1 inline-block'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2' href='#' title='title'>play2earn</a></li>
+                <li className='px-1 inline-block'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2' href='#' title='title'>win2earn</a></li>
               </ul>
               <ul className='items-center mb-3 flex flex-wrap'>
                 <li className='px-1'>
@@ -151,7 +151,7 @@ const NFTdetail = () => {
           </article>
           <article className='xxs:w-full md:w-6/12 p-5'>
             <div className='flex flex-wrap items-center xxs:mb-5 lg:mb-10'>
-              <span className='text-22 font-semibold bg-green rounded-lg px-4 leading-10 mr-3'>8.4</span>
+              <span className='text-22 font-semibold bg-greenCustom rounded-lg px-4 leading-10 mr-3'>8.4</span>
               <span className='text-14 opacity-[0.47]'>48 Reviews</span>
             </div>
             <div className='flex flex-wrap items-center xxs:mb-5 lg:mb-10'>
@@ -421,7 +421,7 @@ const NFTdetail = () => {
         <header className='mb-2'>
           <h2 className='text-28 font-semibold leading-tight'>
             <span>You May Also Like</span>
-            <a className='text-14 text-blue font-semibold ml-2 float-right mt-2 flex items-center' href='#' title='title'>
+            <a className='text-14 text-blueCustom font-semibold ml-2 float-right mt-2 flex items-center' href='#' title='title'>
               <span className='xxs:hidden md:block'>Browse more NFTs</span><BsArrowRightCircleFill className='xxs:block md:hidden ml-2 xxs:text-22 md:text-16'/>
             </a>
           </h2>
@@ -429,7 +429,7 @@ const NFTdetail = () => {
         <div className='flex flex-wrap mx-[-16px]'>
           <article className='xxs:w-full sm:w-6/12 lg:w-4/12 xl:w-3/12 p-4'>
             <div className='bg-121212 rounded-lg overflow-hidden h-full relative pb-[60px]'>
-              <span className='bg-[#030303] py-0.5 px-2 font-semibold rounded text-12 absolute left-5 top-5 z-10 text-yellow'>
+              <span className='bg-[#030303] py-0.5 px-2 font-semibold rounded text-12 absolute left-5 top-5 z-10 text-yellowCustom '>
                 <BsFillSuitDiamondFill className='inline-block mr-1'/>Rare
               </span>
               <figure className='pt-[82%] relative bg-linear626'>
@@ -452,7 +452,7 @@ const NFTdetail = () => {
                   </div>
                 </div>
               </div>
-              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blue bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
+              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blueCustom bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
             </div>
           </article>
           <article className='xxs:w-full sm:w-6/12 lg:w-4/12 xl:w-3/12 p-4'>
@@ -480,12 +480,12 @@ const NFTdetail = () => {
                   </div>
                 </div>
               </div>
-              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blue bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
+              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blueCustom bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
             </div>
           </article>
           <article className='xxs:w-full sm:w-6/12 lg:w-4/12 xl:w-3/12 p-4'>
             <div className='bg-121212 rounded-lg overflow-hidden h-full relative pb-[60px]'>
-              <span className='bg-[#030303] py-0.5 px-2 font-semibold rounded text-12 absolute left-5 top-5 z-10 text-yellow'>
+              <span className='bg-[#030303] py-0.5 px-2 font-semibold rounded text-12 absolute left-5 top-5 z-10 text-yellowCustom '>
                 <BsFillSuitDiamondFill className='inline-block mr-1'/>Rare
               </span>
               <figure className='pt-[82%] relative bg-linear626'>
@@ -508,7 +508,7 @@ const NFTdetail = () => {
                   </div>
                 </div>
               </div>
-              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blue bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
+              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blueCustom bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
             </div>
           </article>
           <article className='xxs:w-full sm:w-6/12 lg:w-4/12 xl:w-3/12 p-4'>
@@ -536,7 +536,7 @@ const NFTdetail = () => {
                   </div>
                 </div>
               </div>
-              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blue bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
+              <button className='w-[calc(100%-40px)] uppercase leading-10 px-3 text-14 font-semibold text-blueCustom bg-[#2B3035] rounded absolute bottom-5 left-5'>BUY NOW</button>
             </div>
           </article>
         </div>

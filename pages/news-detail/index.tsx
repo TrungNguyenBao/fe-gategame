@@ -124,7 +124,7 @@ const NFTdetail = () => {
                 <img src="/images/demo/demo04.png" alt="title"></img>
               </figure>
               <textarea className='bg-121212 w-full h-22 rounded resize-none outline-none p-3 border border-[#343a40]' placeholder='Write your comment here...'></textarea>
-              <button className='font-semibold leading-10 px-5 bg-blue rounded'>Comment</button>
+              <button className='font-semibold leading-10 px-5 bg-blueCustom rounded'>Comment</button>
             </div>
             <div className='relative'>
               <ul className='relative'>
@@ -139,8 +139,8 @@ const NFTdetail = () => {
                     I love puzzle games that are more fun than overly complicated...it makes for much less frustration and much more enjoyable and satisfying experience.
                   </p>
                   <div className='mt-3 text-14 text-right'>
-                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellow'><AiTwotoneLike className='inline-block mr-1.5'/>05</button>
-                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellow'><AiTwotoneDislike className='inline-block mr-1.5'/>01</button>
+                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellowCustom '><AiTwotoneLike className='inline-block mr-1.5'/>05</button>
+                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellowCustom '><AiTwotoneDislike className='inline-block mr-1.5'/>01</button>
                   </div>
                 </li>
                 <li className='relative md:pl-20 xxs:pl-10 mb-5 pb-5 border-b border-[#343a40]'>
@@ -154,16 +154,16 @@ const NFTdetail = () => {
                     I love puzzle games that are more fun than overly complicated...it makes for much less frustration and much more enjoyable and satisfying experience.
                   </p>
                   <div className='mt-3 text-14 text-right'>
-                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellow'><AiTwotoneLike className='inline-block mr-1.5'/>05</button>
-                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellow'><AiTwotoneDislike className='inline-block mr-1.5'/>01</button>
+                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellowCustom '><AiTwotoneLike className='inline-block mr-1.5'/>05</button>
+                    <button className='leading-9 px-3 bg-[#121212] rounded duration-200 ml-3 focus:text-yellowCustom '><AiTwotoneDislike className='inline-block mr-1.5'/>01</button>
                   </div>
                 </li>
               </ul>
               <ul className='text-right text-14'>
                 <li className='inline-block ml-2 text-center opacity-[0.68]'>Page:</li>
-                <li className='inline-block ml-2 text-center'><a className='w-6 h-6 focus:bg-blue hover:bg-blue bg-121212 inline-block rounded duration-200' href='#' title='title'>1</a></li>
-                <li className='inline-block ml-2 text-center'><a className='w-6 h-6 focus:bg-blue hover:bg-blue bg-121212 inline-block rounded duration-200' href='#' title='title'>2</a></li>
-                <li className='inline-block ml-2 text-center'><a className='w-6 h-6 focus:bg-blue hover:bg-blue bg-121212 inline-block rounded duration-200' href='#' title='title'>3</a></li>
+                <li className='inline-block ml-2 text-center'><a className='w-6 h-6 focus:bg-blueCustom hover:bg-blueCustom bg-121212 inline-block rounded duration-200' href='#' title='title'>1</a></li>
+                <li className='inline-block ml-2 text-center'><a className='w-6 h-6 focus:bg-blueCustom hover:bg-blueCustom bg-121212 inline-block rounded duration-200' href='#' title='title'>2</a></li>
+                <li className='inline-block ml-2 text-center'><a className='w-6 h-6 focus:bg-blueCustom hover:bg-blueCustom bg-121212 inline-block rounded duration-200' href='#' title='title'>3</a></li>
               </ul>
             </div>
           </div>
@@ -183,7 +183,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -198,7 +198,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -213,7 +213,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -228,7 +228,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -250,7 +250,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -265,7 +265,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -280,7 +280,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -295,7 +295,7 @@ const NFTdetail = () => {
                     </figure>
                     <div className='xxs:w-full sm:w-8/12 lg:w-full xl:w-8/12  xxs:pl-0 sm:pl-5 lg:pl-0 xl:pl-5 xl:mt-0 xxs:mt-3'>
                       <h3 className='font-semibold leading-snug'>
-                        <a className='hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                        <a className='hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                       </h3>
                       <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
                     </div>
@@ -319,7 +319,7 @@ const NFTdetail = () => {
               </figure>
               <div className='p-5'>
                 <h3 className='font-semibold leading-snug'>
-                  <a className='group-hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                  <a className='group-hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                 </h3>
                 <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
               </div>
@@ -334,7 +334,7 @@ const NFTdetail = () => {
               </figure>
               <div className='p-5'>
                 <h3 className='font-semibold leading-snug'>
-                  <a className='group-hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                  <a className='group-hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                 </h3>
                 <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
               </div>
@@ -349,7 +349,7 @@ const NFTdetail = () => {
               </figure>
               <div className='p-5'>
                 <h3 className='font-semibold leading-snug'>
-                  <a className='group-hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                  <a className='group-hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                 </h3>
                 <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
               </div>
@@ -364,7 +364,7 @@ const NFTdetail = () => {
               </figure>
               <div className='p-5'>
                 <h3 className='font-semibold leading-snug'>
-                  <a className='group-hover:text-blue duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
+                  <a className='group-hover:text-blueCustom duration-200' href='#' title='title'>GateGame is going to Airdrop 5000 GG to 10 Lucky winners</a>
                 </h3>
                 <label className='text-12 flex items-center opacity-[0.47]'>10:30am 11/12/2021</label>
               </div>

@@ -64,20 +64,20 @@ module.exports = {
         },
         grayBg: '#222',
         grayLine: '#343a40',
-        blue:'#0A85ED',
-        ocean:'#00B2CA',
-        green:'#20BF55',
-        yellow:'#FFD500',
-        orange:'#FF9100',
-        violet:'#9D4EDD',
-        121212:'#121212',
+        blueCustom: '#0A85ED',
+        oceanCustom: '#00B2CA',
+        greenCustom: '#20BF55',
+        yellowCustom: '#FFD500',
+        orangeCustom: '#FF9100',
+        violetCustom: '#9D4EDD',
+        121212: '#121212',
       },
       fontFamily: {
         // body: ['Open Sans', 'sans-serif'],
         body: ['hk_grotesk', 'sans-serif'],
       },
-      backgroundColor:{
-        violet:'#9D4EDD',
+      backgroundColor: {
+        violetCustom: '#9D4EDD',
       },
       backgroundImage: {
         customGradientBlackXs:

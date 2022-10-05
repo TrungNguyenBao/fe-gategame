@@ -48,7 +48,7 @@ const ChangePasswordTab: React.FC = () => {
 
           <a
             href="#"
-            className="text-blue hover:text-white focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out "
+            className="text-blueCustom hover:text-white focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out "
           >
             Forgot password?
           </a>

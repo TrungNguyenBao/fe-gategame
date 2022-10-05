@@ -231,7 +231,7 @@ const RegisterVerify = ({ email }: any) => {
       )}
       <button
         type="submit"
-        className="inline-block px-7 py-3 bg-blue text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+        className="inline-block px-7 py-3 bg-blueCustom text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
         data-mdb-ripple="true"
         data-mdb-ripple-color="light"
       >
@@ -456,7 +456,7 @@ const Register = () => {
 
       <button
         type="submit"
-        className="inline-block px-7 py-3 bg-blue text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+        className="inline-block px-7 py-3 bg-blueCustom text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
         data-mdb-ripple="true"
         data-mdb-ripple-color="light"
       >
@@ -571,7 +571,7 @@ const Login = () => {
         </div>
         <a
           href="#!"
-          className="text-blue hover:text-white focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
+          className="text-blueCustom hover:text-white focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
         >
           Forgot password?
         </a>
@@ -583,7 +583,7 @@ const Login = () => {
 
       <button
         type="submit"
-        className="inline-block px-7 py-3 bg-blue text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+        className="inline-block px-7 py-3 bg-blueCustom text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
         data-mdb-ripple="true"
         data-mdb-ripple-color="light"
       >

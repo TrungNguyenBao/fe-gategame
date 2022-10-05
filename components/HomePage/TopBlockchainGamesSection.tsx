@@ -103,7 +103,7 @@ const TopBlockchainGamesTable: React.FC = () => {
                                 name: 'Status', format: (data: { Status: string }) => {
                                     const getClassName = (status: string) => {
                                         return {
-                                            beta: 'from-orange to-orange-dark',
+                                            beta: 'from-orangeCustom to-orange-dark',
                                             development: 'from-blue-600 to-blue-400',
                                             live: 'from-green-600 to-green-400',
                                             alpha: 'from-black to-black'

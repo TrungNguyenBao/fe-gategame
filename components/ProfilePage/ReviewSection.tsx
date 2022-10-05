@@ -90,17 +90,17 @@ const ReviewSection: React.FC = () => {
                   <a className='opacity-[0.47] hover:opacity-100 duration-200 ml-2' href='#' title='title'><AiFillApple className='text-16'/></a>
                 </div>
                 <h3 className='font-semibold leading-snug mb-3'>
-                  <a className='group-hover:text-blue duration-200' href='#' title='title'>No Man’s Sky</a>
+                  <a className='group-hover:text-blueCustom duration-200' href='#' title='title'>No Man’s Sky</a>
                 </h3>
                 <ul className='text-14'>
-                  <li className='inline-block mr-1 mb-1'><a className='text-blue border inline-block border-blue py-0.5 px-2 rounded' href='#' title='title'>free2play</a></li>
-                  <li className='inline-block mr-1 mb-1'><a className='text-blue border inline-block border-blue py-0.5 px-2 rounded' href='#' title='title'>play2earn</a></li>
-                  <li className='inline-block mr-1 mb-1'><a className='text-blue border inline-block border-blue py-0.5 px-2 rounded' href='#' title='title'>win2earn</a></li>
+                  <li className='inline-block mr-1 mb-1'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2 rounded' href='#' title='title'>free2play</a></li>
+                  <li className='inline-block mr-1 mb-1'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2 rounded' href='#' title='title'>play2earn</a></li>
+                  <li className='inline-block mr-1 mb-1'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2 rounded' href='#' title='title'>win2earn</a></li>
                 </ul>
               </div>
               <div className='xxs:w-full md:w-6/12 lg:w-6/12 px-4 xxs:mt-5 md:mt-0'>
                 <div className='mb-3 flex flex-wrap items-center'>
-                  <span className='text-22 font-semibold bg-green rounded-lg px-4 leading-10 inline-block'>8.4</span>
+                  <span className='text-22 font-semibold bg-greenCustom rounded-lg px-4 leading-10 inline-block'>8.4</span>
                   <span className='text-14 opacity-[0.47] ml-2'>10:30am 11/12/2021</span>
                 </div>
                 <div className='opacity-[0.68]'>
@@ -108,7 +108,7 @@ const ReviewSection: React.FC = () => {
                   What begins as a simple rescue mission becomes the battleground of a new war as alien invaders swarm over a chain of North Korean islands. 
                   Playing as super-soldier Nomad, you are armed with a powerful Nanosuit equipped with Speed...
                 </div>
-                <button className='text-blue text-14 font-semibold mt-2'>Read full review</button>
+                <button className='text-blueCustom text-14 font-semibold mt-2'>Read full review</button>
               </div>
               <div className='xxs:w-full md:w-full lg:w-3/12 px-4 xxs:mt-5 lg:mt-0'>
                 <div className='bg-[#202020] flex flex-wrap rounded-lg px-5 pt-3 pb-1'>
@@ -161,17 +161,17 @@ const ReviewSection: React.FC = () => {
                   <a className='opacity-[0.47] hover:opacity-100 duration-200 ml-2' href='#' title='title'><AiFillApple className='text-16'/></a>
                 </div>
                 <h3 className='font-semibold leading-snug mb-3'>
-                  <a className='group-hover:text-blue duration-200' href='#' title='title'>No Man’s Sky</a>
+                  <a className='group-hover:text-blueCustom duration-200' href='#' title='title'>No Man’s Sky</a>
                 </h3>
                 <ul className='text-14'>
-                  <li className='inline-block mr-1 mb-1'><a className='text-blue border inline-block border-blue py-0.5 px-2 rounded' href='#' title='title'>free2play</a></li>
-                  <li className='inline-block mr-1 mb-1'><a className='text-blue border inline-block border-blue py-0.5 px-2 rounded' href='#' title='title'>play2earn</a></li>
-                  <li className='inline-block mr-1 mb-1'><a className='text-blue border inline-block border-blue py-0.5 px-2 rounded' href='#' title='title'>win2earn</a></li>
+                  <li className='inline-block mr-1 mb-1'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2 rounded' href='#' title='title'>free2play</a></li>
+                  <li className='inline-block mr-1 mb-1'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2 rounded' href='#' title='title'>play2earn</a></li>
+                  <li className='inline-block mr-1 mb-1'><a className='text-blueCustom border inline-block border-blueCustom py-0.5 px-2 rounded' href='#' title='title'>win2earn</a></li>
                 </ul>
               </div>
               <div className='xxs:w-full md:w-6/12 lg:w-6/12 px-4 xxs:mt-5 md:mt-0'>
                 <div className='mb-3 flex flex-wrap items-center'>
-                  <span className='text-22 font-semibold bg-orange rounded-lg px-4 leading-10 inline-block'>8.4</span>
+                  <span className='text-22 font-semibold bg-orangeCustom rounded-lg px-4 leading-10 inline-block'>8.4</span>
                   <span className='text-14 opacity-[0.47] ml-2'>10:30am 11/12/2021</span>
                 </div>
                 <div className='opacity-[0.68]'>
@@ -179,7 +179,7 @@ const ReviewSection: React.FC = () => {
                   What begins as a simple rescue mission becomes the battleground of a new war as alien invaders swarm over a chain of North Korean islands. 
                   Playing as super-soldier Nomad, you are armed with a powerful Nanosuit equipped with Speed...
                 </div>
-                <button className='text-blue text-14 font-semibold mt-2'>Read full review</button>
+                <button className='text-blueCustom text-14 font-semibold mt-2'>Read full review</button>
               </div>
               <div className='xxs:w-full md:w-full lg:w-3/12 px-4 xxs:mt-5 lg:mt-0'>
                 <div className='bg-[#202020] flex flex-wrap rounded-lg px-5 pt-3 pb-1'>

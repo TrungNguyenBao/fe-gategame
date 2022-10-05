@@ -63,33 +63,33 @@ const OverviewSection: React.FC = () => {
               </div>
               <ul className='p-5'>
                 <li className='relative pl-8 py-3'>
-                  <span className='w-6 h-6 flex bg-blue rounded-full justify-center items-center absolute left-0 top-4'>
+                  <span className='w-6 h-6 flex bg-blueCustom rounded-full justify-center items-center absolute left-0 top-4'>
                     <HiDatabase/>
                   </span>
                   <h3 className='leading-normal text-14'>
-                    <a className='inline-block hover:text-blue duration-200' href='#' title='title'>
+                    <a className='inline-block hover:text-blueCustom duration-200' href='#' title='title'>
                       You have earned 1,000 GG from GateGame Launchpad have earned 1,000 GG from GateGame Launchpad
                     </a>
                   </h3>
                   <div className='text-12 opacity-[0.47] leading-tight mt-1'>10:30 Nov 17, 2021</div>
                 </li>
                 <li className='relative pl-8 py-3'>
-                  <span className='w-6 h-6 flex bg-blue rounded-full justify-center items-center absolute left-0 top-4'>
+                  <span className='w-6 h-6 flex bg-blueCustom rounded-full justify-center items-center absolute left-0 top-4'>
                     <HiDatabase/>
                   </span>
                   <h3 className='leading-normal text-14'>
-                    <a className='inline-block hover:text-blue duration-200' href='#' title='title'>
+                    <a className='inline-block hover:text-blueCustom duration-200' href='#' title='title'>
                       You have earned 1,000 GG from GateGame Launchpad have earned 1,000 GG from GateGame Launchpad
                     </a>
                   </h3>
                   <div className='text-12 opacity-[0.47] leading-tight mt-1'>10:30 Nov 17, 2021</div>
                 </li>
                 <li className='relative pl-8 py-3'>
-                  <span className='w-6 h-6 flex bg-blue rounded-full justify-center items-center absolute left-0 top-4'>
+                  <span className='w-6 h-6 flex bg-blueCustom rounded-full justify-center items-center absolute left-0 top-4'>
                     <HiDatabase/>
                   </span>
                   <h3 className='leading-normal text-14'>
-                    <a className='inline-block hover:text-blue duration-200' href='#' title='title'>
+                    <a className='inline-block hover:text-blueCustom duration-200' href='#' title='title'>
                       You have earned 1,000 GG from GateGame Launchpad have earned 1,000 GG from GateGame Launchpad
                     </a>
                   </h3>

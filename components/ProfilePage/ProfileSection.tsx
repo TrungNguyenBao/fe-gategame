@@ -32,10 +32,10 @@ const ProfileSection: React.FC = () => {
                 <span className='px-2 inline-block leading-7 bg-121212 rounded'>Level 1</span>
               </li>
               <li className='inline-block mr-2'>
-                <a href='#' title='title' className='px-2 inline-block bg-blue leading-7 rounded'>expert</a>
+                <a href='#' title='title' className='px-2 inline-block bg-blueCustom leading-7 rounded'>expert</a>
               </li>
               <li className='inline-block mr-2'>
-                <a href='#' title='title' className='px-2 inline-block bg-ocean leading-7 rounded'>KOL</a>
+                <a href='#' title='title' className='px-2 inline-block bg-oceanCustom leading-7 rounded'>KOL</a>
               </li>
             </ul>
           </div>

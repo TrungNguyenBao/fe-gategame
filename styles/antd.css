@@ -3270,10 +3270,10 @@ html {
 .ant-popover-green .ant-popover-arrow-content {
   background-color: #52c41a;
 }
-.ant-popover-blue .ant-popover-inner {
+.ant-popover-blueCustom .ant-popover-inner {
   background-color: #1890ff;
 }
-.ant-popover-blue .ant-popover-arrow-content {
+.ant-popover-blueCustom .ant-popover-arrow-content {
   background-color: #1890ff;
 }
 .ant-popover-geekblue .ant-popover-inner {
@@ -3517,7 +3517,7 @@ html {
 .ant-badge-status-green {
   background: #52c41a;
 }
-.ant-badge-status-blue {
+.ant-badge-status-blueCustom {
   background: #1890ff;
 }
 .ant-badge-status-geekblue {
@@ -3788,7 +3788,7 @@ html {
   color: #52c41a;
   background: #52c41a;
 }
-.ant-ribbon-color-blue {
+.ant-ribbon-color-blueCustom {
   color: #1890ff;
   background: #1890ff;
 }
@@ -5164,10 +5164,10 @@ li:last-child .ant-breadcrumb-separator {
 .ant-tooltip-green .ant-tooltip-arrow-content::before {
   background: #52c41a;
 }
-.ant-tooltip-blue .ant-tooltip-inner {
+.ant-tooltip-blueCustom .ant-tooltip-inner {
   background-color: #1890ff;
 }
-.ant-tooltip-blue .ant-tooltip-arrow-content::before {
+.ant-tooltip-blueCustom .ant-tooltip-arrow-content::before {
   background: #1890ff;
 }
 .ant-tooltip-geekblue .ant-tooltip-inner {
@@ -8380,7 +8380,7 @@ textarea.ant-picker-input > input {
 .ant-picker-ranges > li {
   display: inline-block;
 }
-.ant-picker-ranges .ant-picker-preset > .ant-tag-blue {
+.ant-picker-ranges .ant-picker-preset > .ant-tag-blueCustom {
   color: #1890ff;
   background: #e6f7ff;
   border-color: #91d5ff;
@@ -9261,7 +9261,7 @@ _:-ms-fullscreen .ant-picker-range-wrapper .ant-picker-year-panel .ant-picker-ce
   background: #52c41a;
   border-color: #52c41a;
 }
-.ant-tag-blue {
+.ant-tag-blueCustom {
   color: #096dd9;
   background: #e6f7ff;
   border-color: #91d5ff;
@@ -25405,7 +25405,7 @@ tr.ant-table-expanded-row .ant-descriptions-view table {
   border: 2px solid transparent;
   border-radius: 100px;
 }
-.ant-timeline-item-head-blue {
+.ant-timeline-item-head-blueCustom {
   color: #1890ff;
   border-color: #1890ff;
 }
